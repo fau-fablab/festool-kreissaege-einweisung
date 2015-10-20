@@ -1,0 +1,2 @@
+TARGET=einweisung_Kreissaege
+include fablab-document/Makefile.include
