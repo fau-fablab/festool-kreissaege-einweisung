@@ -1,10 +1,7 @@
 ## Built file
-#Einweisung_Drehbank.pdf
-#Einweisungsliste_Drehbank.pdf
-#Betriebsanweisung_Drehen.pdf
-#betriebseinweisung_drehen.pdf # veraltet
-#revision.tex
 output/
+revision.tex
+einweisung_Kreissaege.pdf
 
 ##file explorer files
 .directory
