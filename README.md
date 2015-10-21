@@ -3,7 +3,7 @@ Festool Kreissäge Einweisung
 
 Einweisung des [FAU FabLab](https://fablab.fau.de) in [Festool Kreissäge](https://fablab.fau.de/tool/tauchsage-ts-55-r).
 
-Die neueste Version der Einweisung aus [github](https://github.com/fau-fablab/festool-kreissaege-einweisung) ist als PDF unter https://user.fablab.fau.de/~buildserver/festool-kreissaege-einweisung/einweisung_Kreissäge.pdf abrufbar.
+Die neueste Version der Einweisung aus [github](https://github.com/fau-fablab/festool-kreissaege-einweisung) ist als PDF unter https://user.fablab.fau.de/~buildserver/festool-kreissaege-einweisung/einweisung_Kreissaege.pdf abrufbar.
 
 auschecken
 ----------
