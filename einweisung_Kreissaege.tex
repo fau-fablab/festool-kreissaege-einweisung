@@ -9,6 +9,7 @@
 \usepackage{tabularx} % Tabellen mit bestimmtem Breitenverhältnis der Spalten
 \usepackage{wrapfig} % Textumlauf um Bilder
 \usepackage{todonotes}
+\usepackage{multirow}
 
 \renewcommand{\texteuro}{\euro}
 
@@ -36,6 +37,17 @@
 \end{center}
 \hrule
 \color{black}
+
+\section{Technische Daten}
+\begin{tabular}{r|l}
+Hersteller & Festool \\
+Produktname & Tauchsäge TS 55 REBQ \\
+Leistung & $1200\,\mathrm{Watt}$ \\
+Drezahlbereich & $2.000 - 5.800\,\mathrm{min}^{-1}$ \\
+\multirow{2}{*}{Schnitttiefe} & max. $55\,\mathrm{mm}$ \\
+             & max. $43\,\mathrm{mm}$ bei 45º\\
+Sägeblattabmessung & $160x2,2x20\,\mathrm{mm}$\\
+\end{tabular}
 
 \section[Allgemeine Sicherheitshinweise]{Allgemeine Sicherheitshinweise}
 \begin{itemize}
@@ -122,40 +134,41 @@ TODO siehe Anleitung
 TODO siehe Anleitung
 
 \section{Zeichnungen}
-\begin{figure}[H]
+\begin{figure}
 	\centering
-%	\includegraphics[width=1\textwidth]{img/festool_bilder_1Teil1.pdf}
-	\caption{}
-	\label{fig:gehaeuse_oben}
+	\includegraphics[width=1\textwidth]{img/festool-uebersicht.pdf}
+	\caption{Übersicht der Tauchsäge Festool TS 55 REBQ}
+	\label{fig:uebersicht}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
-%	\includegraphics[width=1\textwidth]{img/festool_bilder_1Teil2.pdf}
-	\caption{}
-	\label{fig:gehaeuse_oben}
+	\includegraphics[width=1\textwidth]{img/festool-blattwechsel.pdf}
+	\caption{Sägeblattwechsel bei Tauchsäge Festool TS 55 REBQ}
+	\label{fig:blattwechsel}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
-%	\includegraphics[width=1\textwidth]{img/festool_bilder_2Teil1.pdf}
-	\caption{}
-	\label{fig:gehaeuse_oben}
+	\includegraphics[width=1\textwidth]{img/festool-schnitttiefenanschlag.pdf}
+	\caption{Schnitttiefenanschlag bei Tauchsäge Festool TS 55 REBQ}
+	\label{fig:schnitttiefenanschlag}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}
 	\centering
-%	\includegraphics[width=1\textwidth]{img/festool_bilder_2Teil2.pdf}
-	\caption{}
-	\label{fig:gehaeuse_oben}
+	\includegraphics[width=1\textwidth]{img/festool-schnittwinkel.pdf}
+	\caption{Schnittwinkel Einstellung bei Tauchsäge Festool TS 55 REBQ}
+	\label{fig:schnittwinkel}
 \end{figure}
+
+
+
 
 
 \newpage
-\section{Quellen}
-\begin{itemize}
-\item Festool \glqq Originalbetriebsanleitung\grqq TS 55 REBQ unter 
-\url{http://www.etracker.de/lnkcnt.php?et=6hsNGE&url=https\%3a\%2f\%2fassets.festool.com\%2fmedia\%2f706758_002_ts55rebq.zip&lnkname=Bedienungsanleitung+TS+55}
-\end{itemize}
+\section{Quellen und Rechte}
+\label{quellen}
+Alle Rechte an Grafiken, Tabellen und Textabschnitte, welche aus der Festool Originalbetriebsanleitung übernommen wurden liegen bei Festool. Die \glqq Originalbetriebsanleitung\grqq liegt der Maschine bei und ist online auf \url{www.festool.com} zu finden. Festool hat dieses Dokument weder gelesen, noch auf Vollständigkeit oder Richtigkeit geprüft und übernimmt keine Haftung.
 
 \end{document}
