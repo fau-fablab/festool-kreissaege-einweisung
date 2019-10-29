@@ -1,0 +1,58 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% COPYRIGHT: (C) 2012-2018 FAU FabLab and others
+%  CC-BY-SA 3.0
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand{\basedir}{./fablab-document/}
+\documentclass{\basedir/fablab-document}
+\usepackage{fancybox} %ovale Boxen für Knöpfe
+\usepackage{amssymb} % Symbole für Knöpfe
+\usepackage{subfigure,caption}
+\usepackage{eurosym}
+\usepackage{tabularx} % Tabellen mit bestimmtem Breitenverhältnis der Spalten
+\usepackage{wrapfig} % Textumlauf um Bilder
+\renewcommand{\texteuro}{\euro}
+\usepackage{ifthen}
+\usepackage{xspace}
+\def\tabularnewcol{&\xspace} % hässlicher Workaround von http://tex.stackexchange.com/questions/7590/how-to-programmatically-make-tabular-rows-using-whiledo
+
+
+\usepackage{tabularx} % Tabelle mit teilweise gleich großen Spalten
+\title{Einweisungsliste Festool-Kreissäge}
+\fancyfoot[C]{\small https://github.com/fau-fablab/festool-kreissaege-einweisung}
+\fancyfoot[L]{Einweisungsliste Nr. \underline{\hspace{3em}}}
+
+\begin{document}
+%\maketitle
+
+Ich bestätige mit meiner Unterschrift verbindlich, dass
+
+\begin{itemize}
+\item ich die Regeln und Hinweise gelesen und verstanden habe
+\item ich ein Werkstück unter Anleitung erfolgreich gefertigt habe
+\item ich bei weitergehenden Fragen die Bedienungsanleitung der Maschine lesen werde
+\item die Möglichkeit für Fragen und Diskussion gegeben war
+\item die Möglichkeit, eine Kopie der Anleitung zu erhalten, gegeben war
+\end{itemize}
+
+
+
+% einfach kopiert von Einweisungsliste Lasercutter
+
+\newcounter{i}
+\setcounter{i}{1}
+
+\newcommand{\leerezeile}{\hspace{2em} \tabularnewcol \hspace{3em} \tabularnewcol \hspace{2.5em} \tabularnewcol \hspace{2.5em} \tabularnewcol \vbox{\vspace{2em}} \tabularnewcol \tabularnewcol \tabularnewcol \tabularnewline \hline}
+
+\begin{tabularx}{\textwidth}{|l|l|l|l|X|X|X|X|}
+  \hline
+  \textbf{Nr.} & \textbf{Datum} & \textbf{von} & \textbf{bis} & \textbf{Name} & \textbf{Unterschrift} & \textbf{Einweisender} & \textbf{Unterschrift} \\ \hline
+  \whiledo{\value{i}<13}%
+  {%
+    \stepcounter{i} \leerezeile
+  }%
+  \leerezeile % doofer Workaround, eigentlich sollte das auch in der Forschleife gehen! Ohne dies wird die Spaltenbegrenzung von Spalte 1 zu weit gezeichnet.
+\end{tabularx}
+
+\end{document}
