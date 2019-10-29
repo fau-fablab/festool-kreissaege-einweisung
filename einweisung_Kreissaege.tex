@@ -10,6 +10,11 @@
 \usepackage{wrapfig} % Textumlauf um Bilder
 \usepackage{todonotes}
 \usepackage{multirow}
+\usepackage{framed}
+\usepackage{xargs}
+\usepackage{caption}
+
+\renewenvironmentx{leftbar}[3][2=0.5pt, 3=5pt]{\def\FrameCommand{\vrule width #2 \hspace{#3}}\MakeFramed {\advance\hsize-\width \FrameRestore}{\tiny#1\\}} {\endMakeFramed}
 
 \renewcommand{\texteuro}{\euro}
 
@@ -29,14 +34,14 @@
 % \mtcset
 % hier geht das eigentliche Dokument los
 
-\color{red}
-\hrule
-\begin{center}
-\large{Achtung! Einweisung ist noch in Arbeit!}
-\vspace{0.1cm}
-\end{center}
-\hrule
-\color{black}
+%\color{red}
+%\hrule
+%\begin{center}
+%\large{Achtung! Einweisung ist noch in Arbeit!}
+%\vspace{0.1cm}
+%\end{center}
+%\hrule
+%\color{black}
 
 \section{Technische Daten}
 \begin{tabular}{r|l}
@@ -68,7 +73,7 @@ Dieser Abschnitt nennt die wichtigsten Gefahren und Sicherheitsregeln.
 \item Bei beschädigtem Stromkabel die Arbeit sofort beenden, Stecker ziehen und gegen ein intaktes auswechseln.
 \end{itemize}
 
-\textbf{Gefahr des Wegschleuderns von Werkstückteilen, Rückschlagen der Säge}
+\textbf{Gefahr des Wegschleuderns von Werkstückteilen}
 \begin{itemize}
 \item Das Werkstück stabil und sicher fixieren, z.\,B. mit Schraubzwingen auf dem Festool Arbeitstisch. Dies ist wichtig,
 um die Gefahr von Körperkontakt, Klemmen des Sägeblattes oder Verlust der Kontrolle zu minimieren.
@@ -79,6 +84,42 @@ um die Gefahr von Körperkontakt, Klemmen des Sägeblattes oder Verlust der Kont
 
 \item Im Arbeitsbereich dürfen sich keine Unbeteiligten befinden. Die Benutzung innerhalb des FabLabs während normaler Öffnungszeiten ist nicht möglich.
 \end{itemize}
+
+\textbf{Rückschlagen der Säge}
+\begin{leftbar}{Aus Festool TS 55 REBQ Handbuch, Abschnitt 2.2 (Anmerkungen in Abschnitt~\ref{quellen} beachten)}
+Ein Rückschlag ist die plötzliche Reaktion
+eines hakenden, klemmenden oder falsch
+ausgerichteten Sägeblattes, die dazu führt,
+dass eine unkontrollierte Säge abhebt und
+sich aus dem Werkstück heraus in Richtung der Bedienperson bewegt.\\
+Ein Rückschlag ist die Folge eines falschen
+oder fehlerhaften Gebrauchs der Säge. Er kann
+durch geeignete Vorsichtsmaßnahmen, wie
+nachfolgend beschrieben, verhindert werden.
+\begin{itemize}
+\item Halten Sie die Säge mit beiden Händen
+fest und bringen Sie Ihre Arme in eine
+Stellung, in der Sie die Rückschlagkräfte
+abfangen können. Halten Sie sich immer
+seitlich des Sägeblattes, nie das Sägeblatt
+in eine Linie mit Ihrem Körper bringen. 
+\item Falls das Sägeblatt verklemmt oder Sie
+die Arbeit unterbrechen, lassen Sie den
+Ein-/Ausschalter los und halten Sie die
+Säge im Werkstoff ruhig, bis das Sägeblatt
+vollständig zum Stillstand gekommen ist.
+Versuchen Sie nie, die Säge aus dem
+Werkstück zu entfernen oder sie rückwärts zu ziehen, solange das Sägeblatt
+sich bewegt, sonst kann ein Rückschlag
+erfolgen.
+\item Wenn Sie eine Säge, die im Werkstück
+steckt, wieder starten wollen, zentrieren
+Sie das Sägeblatt im Sägespalt und überprüfen Sie, ob die Sägezähne nicht im
+Werkstück verhakt sind. 
+\item Stützen Sie große Platten ab, um das Risiko eines Rückschlags durch ein klemmendes Sägeblatt zu vermindern.
+
+\end{itemize}
+\end{leftbar}
 
 \textbf{Gesundheitsgefahr durch Holzstaub}
 \begin{itemize}
@@ -117,6 +158,34 @@ Maschine vor dem Anschließen und Lösen der Netzanschlussleitung stets ausschal
 Schieben Sie die Einschaltsperre nach oben und drücken Sie den Ein-/Ausschalter (drücken = Ein / loslassen = AUS).
 Die Betätigung der Einschaltsperre entriegelt die Eintauchvorrichtung. Das Sägeaggregat kann nach unten bewegt werden. Dabei taucht das Sägeblatt aus der Schutzhaube aus.
 
+\section{Arbeiten mit der Säge}
+\begin{leftbar}{Aus Festool TS 55 REBQ Handbuch, Abschnitt 8 (Anmerkungen in Abschnitt~\ref{quellen} beachten)}
+Beachten Sie beim Arbeiten alle eingangs gemachten Sicherheitshinweise
+sowie folgende Regeln:
+\begin{itemize}
+\item Führen Sie das Elektrowerkzeug nur im
+eingeschalteten Zustand gegen das Werkstück.
+\item Kontrollieren Sie vor jedem Einsatz die
+Funktion der Einbauvorrichtung und verwenden Sie die Maschine nur, wenn diese
+ordnungsgemäß funktioniert.
+\item Befestigen Sie das Werkstück stets so,
+dass es sich beim Bearbeiten nicht bewegen kann.
+\item Halten Sie das Elektrowerkzeug beim Arbeiten immer mit beiden Händen an den
+Handgriffen [1-4]. Dies vermindert die Verletzungsgefahr und ist die Voraussetzung
+für exaktes Arbeiten.
+\item Schieben Sie die Säge stets nach vorne [9-2], keinesfalls rückwärts zu sich heranziehen.
+\item Vermeiden Sie durch eine angepasste Vorschubgeschwindigkeit eine Überhitzung
+der Schneiden des Sägeblattes, und beim
+Schneiden von Kunststoffen ein Schmelzen
+des Kunststoffes.
+\item Vergewissern Sie sich vor dem Arbeiten,
+dass alle Drehknöpfe [4-1] fest angezogen
+sind.
+\item Arbeiten Sie nicht mit der Maschine, wenn
+die Elektronik defekt ist, da dies zu überhöhten Drehzahlen führen kann. Eine fehlerhafte Elektronik erkennen Sie am fehlenden Sanftanlauf oder wenn keine Drehzahlregelung möglich ist.
+\end{itemize}
+\end{leftbar}
+
 \section{Einstellungen}
 \subsection{Funktionen der Maschine}
 \begin{itemize}
@@ -128,52 +197,111 @@ Die Betätigung der Einschaltsperre entriegelt die Eintauchvorrichtung. Das Säg
 \item Bremse: Die TS 55 REBQ besitzt eine elektronische Bremse. Nach dem Ausschalten wird das Sägeblatt in ca. 2 Sekunden elektronisch zum Stillstand abgebremst.
 \end{itemize}
 
+
 \subsection{Schnitttiefe einstellen}
-Die Schnitttiefe lässt sich von 0 - 55 mm am Schnitttiefenanschlag einstellen. Das Sägeaggregat kann nun bis zur eingestellten Schnitttiefe nach unten gedrückt werden. Auf der tauchtiefeneinstellung stehen die mm-Angaben mit FS für mit Führschiene.
-\begin{itemize}
-\item Schnitttiefe ohne Führungsschiene: max. 55 mm
-\item Schnitttiefe mit Führungsschiene FS: max. 51 mm
-\end{itemize}
+\begin{minipage}{70mm}
+   \begin{leftbar}{Aus Festool TS 55 REBQ Handbuch, Abschnitt 7.2 (Anmerkungen in Abschnitt~\ref{quellen} beachten)}
+Die Schnitttiefe lässt sich von 0 - 55 mm am
+Schnitttiefenanschlag [3-1] einstellen.
+Das Sägeaggregat kann nun bis zur eingestellten Schnitttiefe nach unten gedrückt werden.
+	\begin{itemize}
+	\item Schnitttiefe ohne Führungsschiene: max. 55 mm
+	\item Schnitttiefe mit Führungsschiene FS: max. 51 mm
+	\end{itemize}
+	\end{leftbar}
+%\vspace{30mm}
+\end{minipage}
+\hspace{7mm}
+\begin{minipage}{90mm}
+    \centering
+	\includegraphics[width=1\textwidth]{img/festool-schnitttiefenanschlag.pdf}
+	\captionof{figure}{Schnitttiefenanschlag bei Tauchsäge Festool TS 55 REBQ}
+	\label{fig:schnitttiefenanschlag}
+\end{minipage}
+
 
 \subsection{Schnittwinkel einstellen}
-TODO siehe Anleitung
+\begin{minipage}{70mm}
+\begin{leftbar}{Aus Festool TS 55 REBQ Handbuch, Abschnitt 7.3 (Anmerkungen in Abschnitt~\ref{quellen} beachten)}
+\textbf{Schwenken zwischen 0\textdegree und 45\textdegree}
+\begin{itemize}
+\item[1] Schieben Sie bei Winkelschnitten das
+Sichtfenster/Splitterschutz in die oberste
+Position!
+\item[2] Öffnen Sie die Drehknöpfe [4-1].
+\item[3] Schwenken Sie das Sägeaggregat bis zum
+gewünschten Schnittwinkel [4-2].
+\item[4] Schließen Sie die Drehknöpfe [4-1].
+\end{itemize}
+\textbf{Schwenken zwischen -1\textdegree und 47\textdegree}
+\begin{itemize}
+\item[1] Schwenken Sie das Sägeaggregat wie oben
+beschrieben in die Endlage (0\textdegree\ /45\textdegree).
+\item[2] Ziehen Sie die Entriegelung [4-3] leicht heraus.
+\item[3] Ziehen Sie für den -1\textdegree\ -Hinterschnitt zusätzlich die Entriegelung [4-4] heraus. Das Sägeaggregat fällt in die -1\textdegree\ /47\textdegree -Stellung.
+\item[4] Schließen Sie die Drehknöpfe [4-1].
+\end{itemize}
+\end{leftbar}
+%\vspace{30mm}
+\end{minipage}
+\hspace{7mm}
+\begin{minipage}{90mm}
+    \centering
+	\includegraphics[width=1\textwidth]{img/festool-schnittwinkel.pdf}
+	\captionof{figure}{Schnittwinkeleinstellung bei Tauchsäge Festool TS 55 REBQ}
+	\label{fig:schnittwinkel}
+\end{minipage}
 
-\subsubsection{Sägeblatt wechseln}
-TODO siehe Anleitung
+\subsection{Sägeblatt wechseln}
+\begin{minipage}{70mm}
+   \begin{leftbar}{Aus Festool TS 55 REBQ Handbuch, Abschnitt 7.4 (Anmerkungen in Abschnitt~\ref{quellen} beachten)}
+\textbf{Verletzungsgefahr durch heißes und scharfes Werkzeug}
+Keine stumpfen und defekten Einsatzwerkzeuge verwenden. Schutzhandschuhe tragen.
 
-\section{Arbeiten mit der Maschine}
-TODO siehe Anleitung
+\begin{itemize}
+\item[1] Schwenken Sie die Maschine vor dem Sägeblattwechsel auf 0\textdegree -Stellung und stellen Sie
+die maximale Schnitttiefe ein.
+\item[2] Legen Sie den Hebel [5-2] bis zum Anschlag um.
+\item[3] Schieben Sie die Einschaltsperre [5-1] nach
+oben und drücken Sie das Sägeaggregat bis
+zum Einrasten nach unten.
+\item[4] Öffnen Sie die Schraube [5-5] mit dem Innensechskantschlüssel [5-3].
+\item[5] Entnehmen Sie das Sägeblatt [5-7].
+\item[6] Setzen Sie ein neues Sägeblatt ein.
+Die Drehrichtung vom Sägeblatt [5-8]
+und Maschine [5-6] müssen übereinstimmen!
+\item[7] Setzen Sie den äußeren Flansch [5-9] so
+ein, dass die Mitnahmezapfen in die Aussparung des inneren Flansches eingreift.
+\item[8] Ziehen Sie die Schraube [5-5] fest an.
+\item[9] Legen Sie den Hebel [5-2] zurück.
+\end{itemize}
+\end{leftbar}
+%\vspace{30mm}
+\end{minipage}
+\hspace{7mm}
+\begin{minipage}{90mm}
+    \centering
+	\includegraphics[width=1\textwidth]{img/festool-blattwechsel.pdf}
+	\captionof{figure}{Sägeblattwechsel bei Tauchsäge Festool TS 55 REBQ}
+	\label{fig:blattwechsel}
+\end{minipage}
 
-\section{Zeichnungen}
 
+\newpage
+\section{Überblickzeichnungen}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\textwidth]{img/festool-uebersicht.pdf}
+	\includegraphics[width=0.9\textwidth]{img/festool-uebersicht.pdf}
 	\caption{Übersicht der Tauchsäge Festool TS 55 REBQ}
 	\label{fig:uebersicht}
 \end{figure}
 
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=1\textwidth]{img/festool-blattwechsel.pdf}
-	\caption{Sägeblattwechsel bei Tauchsäge Festool TS 55 REBQ}
-	\label{fig:blattwechsel}
-\end{figure}
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=1\textwidth]{img/festool-schnitttiefenanschlag.pdf}
-	\caption{Schnitttiefenanschlag bei Tauchsäge Festool TS 55 REBQ}
-	\label{fig:schnitttiefenanschlag}
-\end{figure}
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=1\textwidth]{img/festool-schnittwinkel.pdf}
-	\caption{Schnittwinkel Einstellung bei Tauchsäge Festool TS 55 REBQ}
-	\label{fig:schnittwinkel}
-\end{figure}
+
+
+
 
 
 
