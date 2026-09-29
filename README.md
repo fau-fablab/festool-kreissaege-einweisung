@@ -45,3 +45,12 @@ Lizenz
 ------
 
 **Noch ungeklärt:** Die Einweisung enthält Texte und Abbildungen aus der Betriebsanleitung von Festool, deren Rechte bei Festool liegen.
+
+Die Betriebsanweisung (`betriebsanweisung/ba_handkreissaege.tex`, BA-HK-01) ist dagegen komplett
+selbst formuliert und enthält keine Texte oder Abbildungen von Festool, nur ISO-7010-Symbole.
+Sie kann daher unabhängig von der Festool-Frage veröffentlicht werden. **Beim Bearbeiten nichts
+aus der Festool-Anleitung übernehmen, auch nicht sinngemäß Satz für Satz.**
+
+Eine lizenzsichere Einweisung ließe sich genauso aufbauen: eigene Formulierungen, eigene Fotos
+statt Festool-Grafiken, für Details Verweis auf die Originalanleitung (Link auf festool.com)
+statt Abdruck. Alternativ Festool um schriftliche Erlaubnis bitten.
