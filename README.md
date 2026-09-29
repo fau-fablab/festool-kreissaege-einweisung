@@ -44,13 +44,9 @@ Technische Details zum Buildserver: [fau-fablab/buildserver](https://github.com/
 Lizenz
 ------
 
-**Noch ungeklärt:** Die Einweisung enthält Texte und Abbildungen aus der Betriebsanleitung von Festool, deren Rechte bei Festool liegen.
+Die Einweisung und die Betriebsanweisung (`betriebsanweisung/ba_handkreissaege.tex`, BA-HK-01) sind selbst
+formuliert und enthalten keine Texte oder Abbildungen aus der Festool-Betriebsanleitung, nur ISO-7010-Symbole.
+Für Details wird auf die Originalanleitung von Festool verwiesen. **Beim Bearbeiten nichts aus der
+Festool-Anleitung übernehmen, auch nicht sinngemäß Satz für Satz.** Bilder bitte selbst fotografieren.
 
-Die Betriebsanweisung (`betriebsanweisung/ba_handkreissaege.tex`, BA-HK-01) ist dagegen komplett
-selbst formuliert und enthält keine Texte oder Abbildungen von Festool, nur ISO-7010-Symbole.
-Sie kann daher unabhängig von der Festool-Frage veröffentlicht werden. **Beim Bearbeiten nichts
-aus der Festool-Anleitung übernehmen, auch nicht sinngemäß Satz für Satz.**
-
-Eine lizenzsichere Einweisung ließe sich genauso aufbauen: eigene Formulierungen, eigene Fotos
-statt Festool-Grafiken, für Details Verweis auf die Originalanleitung (Link auf festool.com)
-statt Abdruck. Alternativ Festool um schriftliche Erlaubnis bitten.
+Offen: Die Platzhalter `\todo` in der Einweisung stehen für eigene Fotos der Säge.

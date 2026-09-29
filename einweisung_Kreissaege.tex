@@ -10,18 +10,14 @@
 \usepackage{wrapfig} % Textumlauf um Bilder
 \usepackage{todonotes}
 \usepackage{multirow}
-\usepackage{framed}
-\usepackage{xargs}
 \usepackage{fablab-document/fablab-ba} % Betriebsanweisung
 \usepackage{caption}
-
-\renewenvironmentx{leftbar}[3][2=0.5pt, 3=5pt]{\def\FrameCommand{\vrule width #2 \hspace{#3}}\MakeFramed {\advance\hsize-\width \FrameRestore}{\tiny#1\\}} {\endMakeFramed}
 
 \renewcommand{\texteuro}{\euro}
 
 \linespread{1.2}
 
-\date{Oktober 2015}
+\date{September 2026}
 \author{}
 \title{Einweisung Kreissäge}
 
@@ -55,77 +51,49 @@ Drehzahlbereich & $2.000 - 5.800\,\mathrm{min}^{-1}$ \\
 Sägeblattabmessung & $160\times 2,2\times 20\,\mathrm{mm}$\\
 \end{tabular}
 
-\section[Allgemeine Sicherheitshinweise]{Allgemeine Sicherheitshinweise}
+\vspace{2mm}
+\noindent Diese Einweisung fasst die Regeln des FabLabs zusammen. Sie ersetzt nicht die
+Betriebsanleitung des Herstellers: Die \textbf{Originalbetriebsanleitung} liegt der Maschine bei und ist
+auf \url{www.festool.com} zu finden. Dort stehen alle Details, die hier nicht wiederholt werden.
 
-Dieser Abschnitt nennt die wichtigsten Gefahren und Sicherheitsregeln.
+\section{Allgemeine Sicherheitshinweise}
 
-\textbf{Gefahr durch das Sägeblatt: Sägen von Fingern, Beinen, der Arbeitsplatte, ...}
+Dieser Abschnitt nennt die wichtigsten Gefahren und Sicherheitsregeln. Eine Kurzfassung steht in der
+Betriebsanweisung (blaue Seite, Abschnitt~\ref{sec:betriebsanweisung}).
+
+\textbf{Gefahr durch das Sägeblatt: Sägen von Fingern, Beinen, der Arbeitsplatte, \dots}
 \begin{itemize}
-\item Hände bei aktiver Säge immer vom Sägebereich und dem Sägeblatt fernhalten. Die Kreissäge immer mit beiden Händen halten. Wenn beide Hände die Kreissäge halten, kann das Sägeblatt diese nicht verletzen.
-
-\item Nicht unter das Werkstück greifen. Die Schutzhaube kann unterhalb des Werkstückes nicht vor dem Sägeblatt schützen.
-
-\item Die Schnitttiefe an die Dicke des Werkstücks anpassen. Es sollte weniger als eine volle Zahnhöhe unter dem Werkstück sichtbar sein. Es darf nicht tiefer als 1\,mm in den Festool-Arbeitstisch gesägt werden.
-
+\item Hände bei laufender Säge vom Sägeblatt fernhalten. Die Säge immer mit beiden Händen an den Griffen führen.
+\item Nicht unter das Werkstück greifen. Die Schutzhaube schützt dort nicht vor dem Sägeblatt.
+\item Die Schnitttiefe an die Dicke des Werkstücks anpassen: Das Sägeblatt soll weniger als eine Zahnhöhe unter dem Werkstück herausragen. In den Festool-Arbeitstisch darf höchstens 1\,mm tief gesägt werden.
 \item Das Werkstück muss fest und sicher verspannt sein.
-
-\item Auf keinen Fall so sägen, dass das Stromkabel getroffen werden kann. Die Metallteile des Elektrowerkzeugs könnten sonst unter Spannung stehen und einen elektrischen Schlag verursachen.
-
-\item Bei beschädigtem Stromkabel die Arbeit sofort beenden, Stecker ziehen und Anschlusskabel gegen ein intaktes auswechseln.
+\item Nie so sägen, dass das Stromkabel getroffen werden kann. Metallteile der Säge könnten sonst unter Spannung stehen (Stromschlag).
+\item Bei beschädigtem Kabel die Arbeit sofort beenden und den Stecker ziehen. Das Kabel wird nicht selbst repariert, sondern durch einen Betreuer ersetzt.
 \end{itemize}
 
 \textbf{Gefahr des Wegschleuderns von Werkstückteilen}
 \begin{itemize}
-\item Das Werkstück stabil und sicher fixieren, z.\,B. mit Schraubzwingen auf dem Festool Arbeitstisch. Dies ist wichtig,
-um die Gefahr von Körperkontakt, Klemmen des Sägeblattes oder Verlust der Kontrolle zu minimieren.
-
-\item Immer die Führungsschiene verwenden. Soweit möglich, diese mit den dafür vorgesehenen Schraubzwingen am Werkstück oder Arbeitstisch befestigen. Dies verbessert die Schnittgenauigkeit und verringert die Möglichkeit, dass das Sägeblatt klemmt.
-
-\item Nur passende Sägeblätter und -Spannflansche von Festool verwenden (siehe Bedienungsanleitung).
-
-\item Im Arbeitsbereich dürfen sich keine Unbeteiligten befinden. Die Benutzung innerhalb des FabLabs während normaler Öffnungszeiten ist nicht möglich.
+\item Werkstück stabil fixieren, z.\,B. mit Schraubzwingen auf dem Festool-Arbeitstisch. Sonst können Körperkontakt, ein klemmendes Sägeblatt oder Kontrollverlust die Folge sein.
+\item Immer die Führungsschiene verwenden und sie, soweit möglich, mit den dafür vorgesehenen Zwingen befestigen. Das verbessert die Schnittgenauigkeit und verringert das Klemmen des Sägeblatts.
+\item Nur passende Sägeblätter und Spannflansche von Festool verwenden.
+\item Im Arbeitsbereich dürfen sich keine Unbeteiligten aufhalten. Die Benutzung im FabLab während der normalen Öffnungszeiten ist nicht möglich.
 \end{itemize}
 
-\textbf{Rückschlagen der Säge}
-\begin{leftbar}{Aus Festool TS 55 REBQ Handbuch, Abschnitt 2.2 (Anmerkungen in Abschnitt~\ref{quellen} beachten)}
-Ein Rückschlag ist die plötzliche Reaktion
-eines hakenden, klemmenden oder falsch
-ausgerichteten Sägeblattes, die dazu führt,
-dass eine unkontrollierte Säge abhebt und
-sich aus dem Werkstück heraus in Richtung der Bedienperson bewegt.\\
-Ein Rückschlag ist die Folge eines falschen
-oder fehlerhaften Gebrauchs der Säge. Er kann
-durch geeignete Vorsichtsmaßnahmen, wie
-nachfolgend beschrieben, verhindert werden.
+\textbf{Rückschlag der Säge}
+
+Ein Rückschlag entsteht, wenn das Sägeblatt klemmt oder verkantet. Die Säge springt dann
+unkontrolliert aus dem Werkstück in Richtung der Bedienperson. Er ist vermeidbar:
 \begin{itemize}
-\item Halten Sie die Säge mit beiden Händen
-fest und bringen Sie Ihre Arme in eine
-Stellung, in der Sie die Rückschlagkräfte
-abfangen können. Halten Sie sich immer
-seitlich des Sägeblattes, nie das Sägeblatt
-in eine Linie mit Ihrem Körper bringen. 
-\item Falls das Sägeblatt verklemmt oder Sie
-die Arbeit unterbrechen, lassen Sie den
-Ein-/Ausschalter los und halten Sie die
-Säge im Werkstoff ruhig, bis das Sägeblatt
-vollständig zum Stillstand gekommen ist.
-Versuchen Sie nie, die Säge aus dem
-Werkstück zu entfernen oder sie rückwärts zu ziehen, solange das Sägeblatt
-sich bewegt, sonst kann ein Rückschlag
-erfolgen.
-\item Wenn Sie eine Säge, die im Werkstück
-steckt, wieder starten wollen, zentrieren
-Sie das Sägeblatt im Sägespalt und überprüfen Sie, ob die Sägezähne nicht im
-Werkstück verhakt sind. 
-\item Stützen Sie große Platten ab, um das Risiko eines Rückschlags durch ein klemmendes Sägeblatt zu vermindern.
-
+\item Säge mit beiden Händen halten, seitlich der Sägeebene stehen und die Arme so positionieren, dass sie einen Rückstoß abfangen können.
+\item Bei klemmendem Blatt oder Arbeitsunterbrechung den Schalter loslassen und die Säge ruhig halten, bis das Blatt vollständig steht. Die Säge nie aus dem Schnitt ziehen oder zurückziehen, solange sich das Blatt dreht.
+\item Vor dem Wiedereinschalten einer im Werkstück steckenden Säge das Blatt im Schnittspalt zentrieren und prüfen, dass die Zähne nicht verhakt sind.
+\item Große Platten abstützen, damit sich der Schnitt nicht zusammenzieht und das Blatt klemmt.
 \end{itemize}
-\end{leftbar}
 
 \textbf{Gesundheitsgefahr durch Holzstaub}
 \begin{itemize}
-	\item Immer Staubsauger anschließen. Nur den für Staubklasse M zugelassenen Festool Staubsauger verwenden.
-	\item Bei Hartholzbearbeitung im FabLab ist darauf zu achten, dass kein Hartholzstaub entsteht. Falls doch, darf die Arbeit im FabLab nicht fortgesetzt werden. Abhilfe kann ein Umzug nach draußen schaffen.
+	\item Immer den Staubsauger anschließen. Nur den für Staubklasse M zugelassenen Festool-Sauger verwenden.
+	\item Bei Hartholz darf im FabLab kein Hartholzstaub entstehen. Falls doch, die Arbeit im FabLab nicht fortsetzen, sondern ins Freie verlegen.
 \end{itemize}
 
 \textbf{Wenn bei der Benutzung ein Schaden an der Maschine entsteht, sind dieser und der Hergang unverzüglich per Mail an fablab-aktive@fablab.fau.de zu melden!}
@@ -136,192 +104,91 @@ Werkstück verhakt sind.
 \item Gehörschutz (befindet sich bei der Fräse)
 \item Schutzbrille bei Metallbearbeitung (neben der Fräse über der Werkbank)
 \item Staubmaske bei stauberzeugenden Arbeiten (insbesondere Hartholz)
-\item Schutzhandschuhe beim Bearbeiten rauer Materialien und beim Werkzeugwechsel tragen.
-\item eng anliegende Kleidung ohne Fransen oder abstehende Elemente wie Kordeln etc. (kann in rotierende Maschine eingezogen werden)
-\item bei längeren Haaren: keine offenen Haare
+\item Schutzhandschuhe beim Bearbeiten rauer Materialien und beim Werkzeugwechsel
+\item Eng anliegende Kleidung ohne Fransen oder abstehende Elemente wie Kordeln (kann in rotierende Maschinen eingezogen werden)
+\item Lange Haare zusammenbinden, keine offenen Haare
 \end{itemize}
 
 {\linespread{1}\BAseite[sec:betriebsanweisung]{betriebsanweisung/ba_handkreissaege}}
 
 \section{Bestimmungsgemäße Verwendung}
-Tauchsägen sind bestimmungsgemäß zum Sägen von Holz, holzähnlichen Werkstoffen, gips- und zementgebundenen Faserstoffen sowie Kunststoffen vorgesehen. Hierfür ist auf die richtige Auswahl des Sägeblattes zu achten. Mit den von Festool angebotenen Spezialsägeblättern für Aluminium können die Maschinen auch zum Sägen von Aluminium verwendet werden. Es dürfen nur Sägeblätter gemäß der Bedienungsanleitung verwendet werden.
+Die Tauchsäge ist zum Sägen von Holz, holzähnlichen Werkstoffen, Kunststoffen sowie gips- und zementgebundenen Faserstoffen vorgesehen. Mit einem Aluminium-Sägeblatt kann auch Aluminium gesägt werden. Es dürfen nur Sägeblätter verwendet werden, die laut Betriebsanleitung für die Maschine zugelassen und für das Material geeignet sind.
 \begin{itemize}
 \item Die Tauchsäge darf ausschließlich von eingewiesenen Personen verwendet werden.
-\item Diese Einweisung bezieht sich auf die Verwendung als Tauchsäge mit Führungsschiene zum Zersägen von Plattenmaterial, Holzlatten und Ähnlichem. Andere Einsätze, etwa die freihändige Benutzung, sind nicht gestattet.
+\item Diese Einweisung gilt für die Verwendung als Tauchsäge mit Führungsschiene zum Zersägen von Plattenmaterial, Holzlatten und Ähnlichem. Andere Einsätze, etwa freihändiges Sägen, sind nicht gestattet.
 \end{itemize}
 
 \subsection{Aluminiumbearbeitung}
-Bei der Bearbeitung von Aluminium sind aus Sicherheitsgründen folgende besonderen Maßnahmen einzuhalten:
+Bei Aluminium gelten zusätzlich:
 \begin{itemize}
 \item Maschine an ein geeignetes Absauggerät anschließen.
-\item Maschine regelmäßig von Staubablagerungen im Motorgehäuse reinigen.
+\item Motorgehäuse regelmäßig von Staubablagerungen reinigen.
 \item Nur Aluminium-Sägeblätter verwenden.
-\item Sichtfenster / den Spanflugschutz schließen. Schutzbrille oder Schutzschild nutzen!
+\item Sichtfenster bzw.\ Spanflugschutz schließen und Schutzbrille oder Schutzschild tragen.
 \end{itemize}
-
 
 \section{Inbetriebnahme}
-Maschine vor dem Anschließen und Lösen der Netzanschlussleitung stets ausschalten! Anschließen und Lösen der Netzanschlussleitung siehe Bild [2].
-Schieben Sie die Einschaltsperre nach oben und drücken Sie den Ein-/Ausschalter (drücken = Ein / loslassen = AUS).
-Die Betätigung der Einschaltsperre entriegelt die Eintauchvorrichtung. Das Sägeaggregat kann nach unten bewegt werden. Dabei taucht das Sägeblatt aus der Schutzhaube aus.
+\begin{itemize}
+\item Die Maschine vor dem Anschließen und Lösen des Netzkabels immer ausschalten.
+\item Zum Einschalten die Einschaltsperre betätigen und den Ein-/Ausschalter drücken. Er läuft nur, solange er gedrückt bleibt: Loslassen schaltet aus.
+\item Die Einschaltsperre entriegelt zugleich die Eintauchvorrichtung: Das Sägeaggregat lässt sich dann nach unten bewegen, und das Sägeblatt taucht aus der Schutzhaube aus.
+\end{itemize}
+\todo[inline]{Foto: Einschaltsperre, Ein-/Ausschalter und Netzanschluss an der Säge, beschriftet.}
 
 \section{Arbeiten mit der Säge}
-\begin{leftbar}{Aus Festool TS 55 REBQ Handbuch, Abschnitt 8 (Anmerkungen in Abschnitt~\ref{quellen} beachten)}
-Beachten Sie beim Arbeiten alle eingangs gemachten Sicherheitshinweise
-sowie folgende Regeln:
+Zusätzlich zu den Sicherheitshinweisen oben:
 \begin{itemize}
-\item Führen Sie das Elektrowerkzeug nur im
-eingeschalteten Zustand gegen das Werkstück.
-\item Kontrollieren Sie vor jedem Einsatz die
-Funktion der Eintauchvorrichtung und verwenden Sie die Maschine nur, wenn diese
-ordnungsgemäß funktioniert.
-\item Befestigen Sie das Werkstück stets so,
-dass es sich beim Bearbeiten nicht bewegen kann.
-\item Halten Sie das Elektrowerkzeug beim Arbeiten immer mit beiden Händen an den
-Handgriffen [1-4]. Dies vermindert die Verletzungsgefahr und ist die Voraussetzung
-für exaktes Arbeiten.
-\item Schieben Sie die Säge stets nach vorne [9-2], keinesfalls rückwärts zu sich heranziehen.
-\item Vermeiden Sie durch eine angepasste Vorschubgeschwindigkeit eine Überhitzung
-der Schneiden des Sägeblattes, und beim
-Schneiden von Kunststoffen ein Schmelzen
-des Kunststoffes.
-\item Vergewissern Sie sich vor dem Arbeiten,
-dass alle Drehknöpfe [4-1] fest angezogen
-sind.
-\item Arbeiten Sie nicht mit der Maschine, wenn
-die Elektronik defekt ist, da dies zu überhöhten Drehzahlen führen kann. Eine fehlerhafte Elektronik erkennen Sie am fehlenden Sanftanlauf oder wenn keine Drehzahlregelung möglich ist.
+\item Vor jedem Einsatz die Eintauchvorrichtung auf einwandfreie Funktion prüfen; bei Fehlfunktion nicht benutzen.
+\item Die Säge nur eingeschaltet gegen das Werkstück führen.
+\item Das Werkstück so befestigen, dass es sich beim Sägen nicht bewegen kann.
+\item Die Säge immer nach vorn schieben, nie rückwärts zu sich heranziehen.
+\item Vorschub anpassen: Zu schnelles oder zu langsames Sägen überhitzt die Zähne, bei Kunststoff schmilzt das Material.
+\item Vor dem Sägen prüfen, dass alle Drehknöpfe fest angezogen sind.
+\item Nicht arbeiten, wenn die Elektronik defekt ist. Anzeichen sind fehlender Sanftanlauf oder eine nicht funktionierende Drehzahlregelung. Es können dann zu hohe Drehzahlen auftreten.
 \end{itemize}
-\end{leftbar}
 
 \section{Einstellungen}
 \subsection{Funktionen der Maschine}
 \begin{itemize}
-\item Sanftanlauf: Der elektronisch geregelte Sanftanlauf sorgt für ruckfreien Anlauf des Elektrowerkzeugs.
-\item Konstante Drehzahl: Die Motordrehzahl wird elektronisch konstant gehalten. Dadurch wird auch bei Belastung eine gleichbleibende Schnittgeschwindigkeit erreicht.
-\item Drehzahlregelung: Die Drehzahl lässt sich mit dem Stellrad stufenlos einstellen. Siehe Tabelle \ref{fig:drehzahltabelle}.
-\item Temperatursicherung: Bei zu hoher Motortemperatur werden Stromzufuhr und Drehzahl reduziert. Die Maschine läuft nur noch mit verringerter Leistung, um eine rasche Abkühlung durch die Motorlüftung zu ermöglichen. Wenn die Übertemperatur andauert, schaltet die Maschine nach ca. 40 sec komplett ab. Erst nach Abkühlung des Motors ist ein erneutes Einschalten möglich.
-\item Strombegrenzung: Die Strombegrenzung verhindert bei extremer Überlastung eine zu hohe Stromaufnahme. Dies kann zu einer Verringerung der Motordrehzahl führen. Nach Entlastung läuft der Motor sofort wieder an.
-\item Bremse: Die TS 55 REBQ besitzt eine elektronische Bremse. Nach dem Ausschalten wird das Sägeblatt in ca. 2 Sekunden elektronisch zum Stillstand abgebremst.
+\item Sanftanlauf: Die Säge läuft ruckfrei an.
+\item Konstante Drehzahl: Die Drehzahl wird auch unter Last konstant gehalten.
+\item Drehzahlregelung: Die Drehzahl wird am Stellrad eingestellt. Welche Stufe für welches Material geeignet ist, steht in der Betriebsanleitung.
+\item Temperatursicherung: Bei zu hoher Motortemperatur reduziert die Säge Leistung und Drehzahl. Hält die Übertemperatur an, schaltet sie nach kurzer Zeit ab. Erst nach dem Abkühlen kann sie wieder eingeschaltet werden.
+\item Strombegrenzung: Bei starker Überlastung wird die Stromaufnahme begrenzt, die Drehzahl sinkt.
+\item Bremse: Nach dem Ausschalten wird das Sägeblatt elektronisch abgebremst und steht nach wenigen Sekunden. Nie in das auslaufende Blatt greifen.
 \end{itemize}
-
-\centering
-	\includegraphics[width=1\textwidth]{img/drehzahltabelle.png}
-	\captionof{figure}{Drehzahltabelle für Tauchsäge Festool TS 55 REBQ}
-	\label{fig:drehzahltabelle}
-
+\todo[inline]{Foto: Stellrad für die Drehzahl mit der Stufenbeschriftung an der Säge.}
 
 \subsection{Schnitttiefe einstellen}
-\begin{minipage}{70mm}
-   \begin{leftbar}{Aus Festool TS 55 REBQ Handbuch, Abschnitt 7.2 (Anmerkungen in Abschnitt~\ref{quellen} beachten)}
-Die Schnitttiefe lässt sich von 0 - 55 mm am
-Schnitttiefenanschlag [3-1] einstellen.
-Das Sägeaggregat kann nun bis zur eingestellten Schnitttiefe nach unten gedrückt werden.
-	\begin{itemize}
-	\item Schnitttiefe ohne Führungsschiene: max. 55 mm
-	\item Schnitttiefe mit Führungsschiene FS: max. 51 mm
-	\end{itemize}
-	\end{leftbar}
-%\vspace{30mm}
-\end{minipage}
-\hspace{7mm}
-\begin{minipage}{90mm}
-    \centering
-	\includegraphics[width=1\textwidth]{img/festool-schnitttiefenanschlag.pdf}
-	\captionof{figure}{Schnitttiefenanschlag bei Tauchsäge Festool TS 55 REBQ}
-	\label{fig:schnitttiefenanschlag}
-\end{minipage}
-
+Die Schnitttiefe wird am Schnitttiefenanschlag eingestellt. Das Sägeaggregat lässt sich dann nur bis zu dieser Tiefe nach unten drücken. Mit Führungsschiene ist die maximale Schnitttiefe etwas geringer als ohne (siehe Betriebsanleitung). Regel im FabLab: Das Blatt ragt nur knapp unter dem Werkstück heraus.
+\todo[inline]{Foto: Schnitttiefenanschlag mit Beschriftung.}
 
 \subsection{Schnittwinkel einstellen}
-\begin{minipage}{70mm}
-\begin{leftbar}{Aus Festool TS 55 REBQ Handbuch, Abschnitt 7.3 (Anmerkungen in Abschnitt~\ref{quellen} beachten)}
-\textbf{Schwenken zwischen 0\textdegree und 45\textdegree}
-\begin{itemize}
-\item[1] Schieben Sie bei Winkelschnitten das
-Sichtfenster/Splitterschutz in die oberste
-Position!
-\item[2] Öffnen Sie die Drehknöpfe [4-1].
-\item[3] Schwenken Sie das Sägeaggregat bis zum
-gewünschten Schnittwinkel [4-2].
-\item[4] Schließen Sie die Drehknöpfe [4-1].
-\end{itemize}
-\textbf{Schwenken zwischen -1\textdegree und 47\textdegree}
-\begin{itemize}
-\item[1] Schwenken Sie das Sägeaggregat wie oben
-beschrieben in die Endlage (0\textdegree\ /45\textdegree).
-\item[2] Ziehen Sie die Entriegelung [4-3] leicht heraus.
-\item[3] Ziehen Sie für den -1\textdegree\ -Hinterschnitt zusätzlich die Entriegelung [4-4] heraus. Das Sägeaggregat fällt in die -1\textdegree\ /47\textdegree -Stellung.
-\item[4] Schließen Sie die Drehknöpfe [4-1].
-\end{itemize}
-\end{leftbar}
-%\vspace{30mm}
-\end{minipage}
-\hspace{7mm}
-\begin{minipage}{90mm}
-    \centering
-	\includegraphics[width=1\textwidth]{img/festool-schnittwinkel.pdf}
-	\captionof{figure}{Schnittwinkeleinstellung bei Tauchsäge Festool TS 55 REBQ}
-	\label{fig:schnittwinkel}
-\end{minipage}
+Das Sägeaggregat lässt sich zwischen 0\textdegree{} und 45\textdegree{} schwenken. Bei Winkelschnitten Sichtfenster bzw.\ Splitterschutz in die oberste Position schieben.
+\begin{enumerate}
+\item Drehknöpfe der Winkelverstellung lösen.
+\item Sägeaggregat auf den gewünschten Winkel schwenken.
+\item Drehknöpfe wieder fest anziehen.
+\end{enumerate}
+Über 0\textdegree{} bzw.\ 45\textdegree{} hinaus (Hinterschnitt, $-1$\textdegree{} bis 47\textdegree) gibt es Entriegelungen an der Säge. Das Vorgehen dazu steht in der Betriebsanleitung; im Zweifel einen Betreuer fragen.
+\todo[inline]{Foto: Winkelverstellung mit Drehknöpfen und Winkelskala.}
 
 \subsection{Sägeblatt wechseln}
-\begin{minipage}{70mm}
-   \begin{leftbar}{Aus Festool TS 55 REBQ Handbuch, Abschnitt 7.4 (Anmerkungen in Abschnitt~\ref{quellen} beachten)}
-\textbf{Verletzungsgefahr durch heißes und scharfes Werkzeug}
-Keine stumpfen und defekten Einsatzwerkzeuge verwenden. Schutzhandschuhe tragen.
+Der Sägeblattwechsel erfolgt nur durch eingewiesene Personen bei gezogenem Netzstecker. Schutzhandschuhe tragen, das Blatt ist scharf und kann heiß sein. Keine stumpfen oder beschädigten Sägeblätter einsetzen.
+\begin{enumerate}
+\item Netzstecker ziehen. Säge auf 0\textdegree{} schwenken und maximale Schnitttiefe einstellen.
+\item Sägeblatt arretieren und die Spannschraube mit dem Innensechskantschlüssel lösen. Die genauen Bedienschritte für Hebel und Einschaltsperre stehen in der Betriebsanleitung.
+\item Altes Blatt entnehmen, neues einsetzen. Die Drehrichtungspfeile auf Blatt und Maschine müssen übereinstimmen.
+\item Äußeren Flansch so aufsetzen, dass die Mitnehmerzapfen in den inneren Flansch greifen, und die Schraube fest anziehen.
+\item Arretierung lösen und Funktion der Schutzhaube prüfen.
+\end{enumerate}
+\todo[inline]{Fotos: Sägeblattwechsel Schritt für Schritt (Arretierung, Spannschraube, Flansch, Drehrichtungspfeil).}
 
-\begin{itemize}
-\item[1] Schwenken Sie die Maschine vor dem Sägeblattwechsel auf 0\textdegree -Stellung und stellen Sie
-die maximale Schnitttiefe ein.
-\item[2] Legen Sie den Hebel [5-2] bis zum Anschlag um.
-\item[3] Schieben Sie die Einschaltsperre [5-1] nach
-oben und drücken Sie das Sägeaggregat bis
-zum Einrasten nach unten.
-\item[4] Öffnen Sie die Schraube [5-5] mit dem Innensechskantschlüssel [5-3].
-\item[5] Entnehmen Sie das Sägeblatt [5-7].
-\item[6] Setzen Sie ein neues Sägeblatt ein.
-Die Drehrichtung vom Sägeblatt [5-8]
-und Maschine [5-6] müssen übereinstimmen!
-\item[7] Setzen Sie den äußeren Flansch [5-9] so
-ein, dass die Mitnahmezapfen in die Aussparung des inneren Flansches eingreifen.
-\item[8] Ziehen Sie die Schraube [5-5] fest an.
-\item[9] Legen Sie den Hebel [5-2] zurück.
-\end{itemize}
-\end{leftbar}
-%\vspace{30mm}
-\end{minipage}
-\hspace{7mm}
-\begin{minipage}{90mm}
-    \centering
-	\includegraphics[width=1\textwidth]{img/festool-blattwechsel.pdf}
-	\captionof{figure}{Sägeblattwechsel bei Tauchsäge Festool TS 55 REBQ}
-	\label{fig:blattwechsel}
-\end{minipage}
+\section{Übersicht der Säge}
+\todo[inline]{Foto der Säge mit beschrifteten Bedienelementen (Griffe, Ein-/Ausschalter mit Einschaltsperre, Stellrad, Schnitttiefenanschlag, Winkelverstellung, Absauganschluss, Führungsschiene).}
 
-
-\newpage
-\section{Überblickzeichnungen}
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.9\textwidth]{img/festool-uebersicht.pdf}
-	\caption{Übersicht der Tauchsäge Festool TS 55 REBQ}
-	\label{fig:uebersicht}
-\end{figure}
-
-
-
-
-
-
-
-
-
-
-
-
-\newpage
 \section{Quellen und Rechte}
 \label{quellen}
-Alle Rechte an Grafiken, Tabellen und Textabschnitten, welche aus der Festool-Originalbetriebsanleitung übernommen wurden, liegen bei Festool. Die \glqq Originalbetriebsanleitung\grqq{} liegt der Maschine bei und ist online auf \url{www.festool.com} zu finden. Festool hat dieses Dokument weder gelesen noch auf Vollständigkeit oder Richtigkeit geprüft und übernimmt keine Haftung.
+Die Formulierungen und Bilder dieser Einweisung sind eigenständig erstellt. Sachliche Angaben (technische Daten, Sicherheitsregeln) beruhen auf der Betriebsanleitung des Herstellers und allgemein bekannten Regeln. Maßgeblich ist die Originalbetriebsanleitung von Festool, die der Maschine beiliegt und auf \url{www.festool.com} zu finden ist. Festool hat dieses Dokument weder geprüft noch übernimmt es dafür eine Haftung.
 
 \end{document}
