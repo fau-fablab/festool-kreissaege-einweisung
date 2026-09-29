@@ -1,236 +1,270 @@
+% !TeX spellcheck = de_DE_frami
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% COPYRIGHT: (C) 2012-2026 FAU FabLab and others
+% CC-BY-SA 3.0
+% Text in eigenen Worten, KEINE Passagen oder Abbildungen aus der
+% Festool-Betriebsanleitung übernehmen (siehe README, Abschnitt Lizenz).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newcommand{\basedir}{fablab-document}
 \documentclass{\basedir/fablab-document}
 
-\usepackage{minitoc} % Inhaltsübersicht je Section
-% \usepackage{fancybox} %ovale Boxen für Knöpfe - nicht mehr benötigt
-\usepackage{amssymb} % Symbole für Knöpfe
-% \usepackage{subfigure,caption}
+\usepackage{amssymb}
 \usepackage{eurosym}
+\usepackage{textcomp}
 \usepackage{tabularx} % Tabellen mit bestimmtem Breitenverhältnis der Spalten
-\usepackage{wrapfig} % Textumlauf um Bilder
-\usepackage{todonotes}
 \usepackage{multirow}
-\usepackage{fablab-document/fablab-ba} % Betriebsanweisung
+\usepackage{todonotes}
 \usepackage{caption}
+\usepackage{qrcode}
+\usepackage{fablab-document/fablab-ba} % Betriebsanweisung
 
 \renewcommand{\texteuro}{\euro}
 
-\linespread{1.2}
-
-\date{September 2026}
-\author{}
+\date{\today}
+% Versionsnummer: version.tex wird von der GitHub Action erzeugt,
+% lokal steht stattdessen "Entwurf" mit Datum in der Fußzeile.
+\InputIfFileExists{version}{}{\newcommand{\Version}{Entwurf \today}}
+\fancyfoot[R]{Version \Version}
+\author{kontakt@fablab.fau.de}
 \title{Einweisung Kreissäge}
 
 \begin{document}
- % Hinweise an Package minitoc, doch bitte irgendwas zu generieren - wird für späteres \secttoc benötigt
-\dosecttoc
-\faketableofcontents
-\mtcsettitle{secttoc}{Arbeitsschritte}
-\mtcsettitlefont{secttoc}{\large \sffamily \bfseries}
-\mtcsetfont{secttoc}{subsection}{\sffamily}
-% \mtcset
-% hier geht das eigentliche Dokument los
 
-%\color{red}
-%\hrule
-%\begin{center}
-%\large{Achtung! Einweisung ist noch in Arbeit!}
-%\vspace{0.1cm}
-%\end{center}
-%\hrule
-%\color{black}
+	\maketitle
+	\begin{center}
+		Für die Tauchsäge \textbf{Festool TS 55 REBQ} mit Führungsschiene\\[1mm]
+		{\small Version \Version}
+	\end{center}
 
-\section{Technische Daten}
-\begin{tabular}{r|l}
-Hersteller & Festool \\
-Produktname & Tauchsäge TS 55 REBQ \\
-Leistung & $1200\,\mathrm{Watt}$ \\
-Drehzahlbereich & $2.000 - 5.800\,\mathrm{min}^{-1}$ \\
-\multirow{2}{*}{Schnitttiefe} & max. $55\,\mathrm{mm}$ \\
-             & max. $43\,\mathrm{mm}$ bei 45º\\
-Sägeblattabmessung & $160\times 2,2\times 20\,\mathrm{mm}$\\
-\end{tabular}
+	\textbf{Nur eingewiesene Benutzer dürfen die Säge selbstständig benutzen.}
+	Wenn du noch nicht eingewiesen bist, frage einen Betreuer. Nach der Einweisung und Unterschrift darfst du die Säge selbstständig verwenden.
 
-\vspace{2mm}
-\noindent Diese Einweisung fasst die Regeln des FabLabs zusammen. Sie ersetzt nicht die
-Betriebsanleitung des Herstellers: Die \textbf{Originalbetriebsanleitung} liegt der Maschine bei und ist
-auf \url{www.festool.com} zu finden. Dort stehen alle Details, die hier nicht wiederholt werden.
+	\section{Regeln und Sicherheit}
 
-\section{Allgemeine Sicherheitshinweise}
+	\begin{itemize}
+		\item Gesägt wird \textbf{immer mit Führungsschiene}, nie freihändig.
+		\item Werkstück und Führungsschiene sind fest gespannt. Die Säge wird immer mit \textbf{beiden Händen} geführt.
+		\item Niemals unter das Werkstück greifen und die Hände vom Sägeblatt fernhalten.
+		\item Immer die Absaugung anschließen.
+		\item Gehörschutz tragen, bei Metall zusätzlich Schutzbrille, bei viel Staub (Hartholz) Staubmaske.
+		\item Bei klemmendem Blatt: Schalter loslassen, Säge ruhig halten, bis das Blatt steht. Nie aus dem Schnitt ziehen.
+		\item Die Säge nur nach vorn schieben, nie zu dir heranziehen.
+		\item Sägeblatt nur bei gezogenem Netzstecker wechseln.
+		\item Schäden an der Säge sofort melden: \texttt{fablab-aktive@fablab.fau.de}.
+		\item \textbf{Nur außerhalb der normalen Öffnungszeiten} des FabLabs sägen. Im Arbeitsbereich dürfen sich keine Unbeteiligten aufhalten.
+	\end{itemize}
 
-Dieser Abschnitt nennt die wichtigsten Gefahren und Sicherheitsregeln. Eine Kurzfassung steht in der
-Betriebsanweisung (blaue Seite, Abschnitt~\ref{sec:betriebsanweisung}).
+	Zusätzlich gilt die \textbf{Betriebsanweisung} auf der nächsten Seite (Abschnitt~\ref{sec:betriebsanweisung}). Sie hängt an der Säge aus und ist Bestandteil dieser Einweisung.
 
-\textbf{Gefahr durch das Sägeblatt: Sägen von Fingern, Beinen, der Arbeitsplatte, \dots}
-\begin{itemize}
-\item Hände bei laufender Säge vom Sägeblatt fernhalten. Die Säge immer mit beiden Händen an den Griffen führen.
-\item Nicht unter das Werkstück greifen. Die Schutzhaube schützt dort nicht vor dem Sägeblatt.
-\item Die Schnitttiefe an die Dicke des Werkstücks anpassen: Das Sägeblatt soll weniger als eine Zahnhöhe unter dem Werkstück herausragen. In den Festool-Arbeitstisch darf höchstens 1\,mm tief gesägt werden.
-\item Das Werkstück muss fest und sicher verspannt sein.
-\item Nie so sägen, dass das Stromkabel getroffen werden kann. Metallteile der Säge könnten sonst unter Spannung stehen (Stromschlag).
-\item Bei beschädigtem Kabel die Arbeit sofort beenden und den Stecker ziehen. Das Kabel wird nicht selbst repariert, sondern durch einen Betreuer ersetzt.
-\end{itemize}
+	\newpage
 
-\textbf{Gefahr des Wegschleuderns von Werkstückteilen}
-\begin{itemize}
-\item Werkstück stabil fixieren, z.\,B. mit Schraubzwingen auf dem Festool-Arbeitstisch. Sonst können Körperkontakt, ein klemmendes Sägeblatt oder Kontrollverlust die Folge sein.
-\item Immer die Führungsschiene verwenden und sie, soweit möglich, mit den dafür vorgesehenen Zwingen befestigen. Das verbessert die Schnittgenauigkeit und verringert das Klemmen des Sägeblatts.
-\item Nur passende Sägeblätter und Spannflansche von Festool verwenden.
-\item Im Arbeitsbereich dürfen sich keine Unbeteiligten aufhalten. Die Benutzung im FabLab während der normalen Öffnungszeiten ist nicht möglich.
-\end{itemize}
+	% Betriebsanweisung als ganze Seite im Format des Aushangs an der Säge
+	\BAseite[sec:betriebsanweisung]{betriebsanweisung/ba_handkreissaege}
 
-\textbf{Rückschlag der Säge}
+	\renewcommand{\contentsname}{Inhaltsverzeichnis / Arbeitsablauf}
+	\setcounter{tocdepth}{2}
+	\tableofcontents
+	\newpage
 
-Ein Rückschlag entsteht, wenn das Sägeblatt klemmt oder verkantet. Die Säge springt dann
-unkontrolliert aus dem Werkstück in Richtung der Bedienperson. Er ist vermeidbar:
-\begin{itemize}
-\item Säge mit beiden Händen halten, seitlich der Sägeebene stehen und die Arme so positionieren, dass sie einen Rückstoß abfangen können.
-\item Bei klemmendem Blatt oder Arbeitsunterbrechung den Schalter loslassen und die Säge ruhig halten, bis das Blatt vollständig steht. Die Säge nie aus dem Schnitt ziehen oder zurückziehen, solange sich das Blatt dreht.
-\item Vor dem Wiedereinschalten einer im Werkstück steckenden Säge das Blatt im Schnittspalt zentrieren und prüfen, dass die Zähne nicht verhakt sind.
-\item Große Platten abstützen, damit sich der Schnitt nicht zusammenzieht und das Blatt klemmt.
-\end{itemize}
+	\section{Die Säge und ihre Anleitung}
 
-\textbf{Gesundheitsgefahr durch Holzstaub}
-\begin{itemize}
-	\item Immer den Staubsauger anschließen. Nur den für Staubklasse M zugelassenen Festool-Sauger verwenden.
-	\item Bei Hartholz darf im FabLab kein Hartholzstaub entstehen. Falls doch, die Arbeit im FabLab nicht fortsetzen, sondern ins Freie verlegen.
-\end{itemize}
+	\begin{center}
+		\begin{tabular}{r|l}
+			Hersteller & Festool \\
+			Produktname & Tauchsäge TS 55 REBQ \\
+			Leistung & $1200\,\mathrm{Watt}$ \\
+			Drehzahlbereich & $2.000 - 5.800\,\mathrm{min}^{-1}$ \\
+			\multirow{2}{*}{Schnitttiefe} & max. $55\,\mathrm{mm}$ \\
+			 & max. $43\,\mathrm{mm}$ bei 45º\\
+			Sägeblattabmessung & $160\times 2,2\times 20\,\mathrm{mm}$\\
+		\end{tabular}
+	\end{center}
 
-\textbf{Wenn bei der Benutzung ein Schaden an der Maschine entsteht, sind dieser und der Hergang unverzüglich per Mail an fablab-aktive@fablab.fau.de zu melden!}
+	Diese Einweisung fasst die Regeln des FabLabs zusammen. Sie ersetzt nicht die Betriebsanleitung des Herstellers: Die \textbf{Originalbetriebsanleitung} liegt der Maschine bei. Details, die hier nicht wiederholt werden (Drehzahlstufen je Material, Entriegelungen für Hinterschnitte, Zubehör), stehen dort.
 
-\subsection{Checkliste vor dem Sägen}
-Vor \textbf{jedem} Einsatz durchgehen:
-\begin{itemize}
-\item Säge, Netzkabel und Schutzhaube unbeschädigt? Läuft die Schutzhaube frei zurück?
-\item Sägeblatt scharf, unbeschädigt, für das Material geeignet und richtig herum eingesetzt?
-\item Schutzausrüstung angelegt (siehe unten)?
-\item Absaugung angeschlossen und eingeschaltet?
-\item Werkstück fest gespannt, große Platten abgestützt? Keine Nägel, Schrauben oder andere Metallteile im Schnittbereich?
-\item Führungsschiene fest aufgelegt bzw.\ geklemmt, Schnitttiefe eingestellt, Drehknöpfe fest?
-\item Netzkabel liegt hinter der Säge und außerhalb des Schnittbereichs?
-\item Arbeitsbereich frei, keine Unbeteiligten in der Nähe?
-\end{itemize}
+	\begin{center}
+		\begin{tabular}{cc}
+			\qrcode[height=2.2cm]{https://www.festool.de/bedienungsanleitungen} &
+			\qrcode[height=2.2cm]{https://www.festool.de/produkte/saegen/tauchsaegen} \\[1mm]
+			\href{https://www.festool.de/bedienungsanleitungen}{Bedienungsanleitungen} &
+			\href{https://www.festool.de/produkte/saegen/tauchsaegen}{Tauchsägen bei Festool}
+		\end{tabular}
+	\end{center}
 
-\subsection{Nicht erlaubt}
-Folgendes ist im FabLab \textbf{verboten}:
-\begin{itemize}
-\item Freihändiges Sägen ohne Führungsschiene.
-\item Sägen ohne angeschlossene Absaugung.
-\item Sägen von ungespannten oder nur mit der Hand gehaltenen Werkstücken.
-\item Sägen sehr kleiner Werkstücke, die sich nicht sicher spannen lassen.
-\item Sägen von Metall außer Aluminium (mit Aluminium-Sägeblatt) sowie von Stein und anderen nicht zugelassenen Materialien.
-\item Sägen von Material mit Nägeln, Schrauben oder anderen Metallteilen im Schnittbereich.
-\item Verwenden nicht zugelassener, stumpfer oder beschädigter Sägeblätter.
-\item Entfernen oder Blockieren der Schutzhaube.
-\item Benutzen der Säge durch nicht eingewiesene Personen.
-\end{itemize}
+	\textbf{Bestimmungsgemäße Verwendung:} Die Tauchsäge sägt Holz, holzähnliche Werkstoffe, Kunststoffe sowie gips- und zementgebundene Faserstoffe. Mit Aluminium-Sägeblatt auch Aluminium. Diese Einweisung gilt nur für die Verwendung als Tauchsäge \textbf{mit Führungsschiene} zum Zersägen von Plattenmaterial, Holzlatten und Ähnlichem. Nur Sägeblätter verwenden, die laut Betriebsanleitung für die Maschine zugelassen und für das Material geeignet sind.
 
-\subsection{Schutzausrüstung}
+	\section{Vorbereitung}
 
-\begin{itemize}
-\item Gehörschutz (befindet sich bei der Fräse)
-\item Schutzbrille bei Metallbearbeitung (neben der Fräse über der Werkbank)
-\item Staubmaske bei stauberzeugenden Arbeiten (insbesondere Hartholz)
-\item Schutzhandschuhe beim Bearbeiten rauer Materialien und beim Werkzeugwechsel
-\item Eng anliegende Kleidung ohne Fransen oder abstehende Elemente wie Kordeln (kann in rotierende Maschinen eingezogen werden)
-\item Lange Haare zusammenbinden, keine offenen Haare
-\end{itemize}
+	\subsection{Checkliste vor dem Sägen}
+	Vor \textbf{jedem} Einsatz durchgehen:
+	\begin{itemize}
+		\item Säge, Netzkabel und Schutzhaube unbeschädigt? Läuft die Schutzhaube frei zurück?
+		\item Sägeblatt scharf, unbeschädigt, für das Material geeignet und richtig herum eingesetzt?
+		\item Schutzausrüstung angelegt (siehe unten)?
+		\item Absaugung angeschlossen und eingeschaltet?
+		\item Werkstück fest gespannt, große Platten abgestützt? Keine Nägel, Schrauben oder andere Metallteile im Schnittbereich?
+		\item Führungsschiene fest aufgelegt bzw.\ geklemmt, Schnitttiefe eingestellt, Drehknöpfe fest?
+		\item Netzkabel liegt hinter der Säge und außerhalb des Schnittbereichs?
+		\item Arbeitsbereich frei, keine Unbeteiligten in der Nähe?
+	\end{itemize}
 
-{\linespread{1}\BAseite[sec:betriebsanweisung]{betriebsanweisung/ba_handkreissaege}}
+	\subsection{Schutzausrüstung}
+	\begin{itemize}
+		\item Gehörschutz (befindet sich bei der Fräse)
+		\item Schutzbrille bei Metallbearbeitung (neben der Fräse über der Werkbank)
+		\item Staubmaske bei stauberzeugenden Arbeiten (insbesondere Hartholz)
+		\item Schutzhandschuhe beim Bearbeiten rauer Materialien und beim Werkzeugwechsel
+		\item Eng anliegende Kleidung ohne Fransen oder abstehende Elemente wie Kordeln (kann in rotierende Maschinen eingezogen werden)
+		\item Lange Haare zusammenbinden, keine offenen Haare
+	\end{itemize}
 
-\section{Bestimmungsgemäße Verwendung}
-Die Tauchsäge ist zum Sägen von Holz, holzähnlichen Werkstoffen, Kunststoffen sowie gips- und zementgebundenen Faserstoffen vorgesehen. Mit einem Aluminium-Sägeblatt kann auch Aluminium gesägt werden. Es dürfen nur Sägeblätter verwendet werden, die laut Betriebsanleitung für die Maschine zugelassen und für das Material geeignet sind.
-\begin{itemize}
-\item Die Tauchsäge darf ausschließlich von eingewiesenen Personen verwendet werden.
-\item Diese Einweisung gilt für die Verwendung als Tauchsäge mit Führungsschiene zum Zersägen von Plattenmaterial, Holzlatten und Ähnlichem. Andere Einsätze, etwa freihändiges Sägen, sind nicht gestattet.
-\end{itemize}
+	\subsection{Material}
+	\begin{itemize}
+		\item Zugelassen: Holz und Holzwerkstoffe, Kunststoffe, Faserzement und Gipsfaser. Aluminium nur mit Aluminium-Sägeblatt.
+		\item Nicht zugelassen: Stahl und andere Metalle außer Aluminium, Stein, Material mit Nägeln, Schrauben oder anderen Metallteilen im Schnittbereich.
+		\item Bei Hartholz darf im FabLab kein Hartholzstaub entstehen. Falls doch, die Arbeit im FabLab nicht fortsetzen, sondern ins Freie verlegen.
+		\item Nur Sägeblätter und Spannflansche von Festool verwenden.
+	\end{itemize}
+	\todo[inline]{Tabelle Sägeblatt je Material (Blatttyp, Zähnezahl, Lagerort) ergänzen.}
 
-\subsection{Aluminiumbearbeitung}
-Bei Aluminium gelten zusätzlich:
-\begin{itemize}
-\item Maschine an ein geeignetes Absauggerät anschließen.
-\item Motorgehäuse regelmäßig von Staubablagerungen reinigen.
-\item Nur Aluminium-Sägeblätter verwenden.
-\item Sichtfenster bzw.\ Spanflugschutz schließen und Schutzbrille oder Schutzschild tragen.
-\end{itemize}
+	\subsection{Absaugung}
+	Immer den Staubsauger anschließen. Nur den für Staubklasse M zugelassenen Festool-Sauger verwenden. Beim Sägen von Aluminium zusätzlich regelmäßig Staubablagerungen im Motorgehäuse entfernen, Sichtfenster bzw.\ Spanflugschutz schließen und Schutzbrille tragen.
+	\todo[inline]{Foto: Säge mit angeschlossenem Sauger, Schlauch am Absauganschluss.}
 
-\section{Inbetriebnahme}
-\begin{itemize}
-\item Die Maschine vor dem Anschließen und Lösen des Netzkabels immer ausschalten.
-\item Zum Einschalten die Einschaltsperre betätigen und den Ein-/Ausschalter drücken. Er läuft nur, solange er gedrückt bleibt: Loslassen schaltet aus.
-\item Die Einschaltsperre entriegelt zugleich die Eintauchvorrichtung: Das Sägeaggregat lässt sich dann nach unten bewegen, und das Sägeblatt taucht aus der Schutzhaube aus.
-\end{itemize}
-\todo[inline]{Foto: Einschaltsperre, Ein-/Ausschalter und Netzanschluss an der Säge, beschriftet.}
+	\section{Sägen}
 
-\section{Arbeiten mit der Säge}
-\subsection{Ein Schnitt Schritt für Schritt}
-\begin{enumerate}
-\item Checkliste vor dem Sägen durchgehen.
-\item Werkstück auf dem Arbeitstisch auflegen und mit Zwingen spannen.
-\item Führungsschiene mit der Splitterschutzkante an der Schnittlinie ausrichten und befestigen.
-\item Schnitttiefe am Schnitttiefenanschlag einstellen.
-\item Absaugung einschalten, Säge auf die Schiene setzen, Schutzausrüstung tragen.
-\item Beide Hände an die Griffe, seitlich der Sägeebene stehen. Einschaltsperre betätigen, Schalter drücken und warten, bis die Drehzahl erreicht ist.
-\item Sägeaggregat langsam eintauchen und gleichmäßig nach vorn durch das Material schieben.
-\item Am Schnittende Schalter loslassen und die Säge ruhig halten, bis das Sägeblatt vollständig steht. Erst dann die Säge anheben.
-\item Netzstecker ziehen, Werkstück lösen, Arbeitsplatz absaugen und aufräumen.
-\end{enumerate}
-\todo[inline]{Foto: Säge auf der Führungsschiene mit Splitterschutzkante an der Schnittlinie, Zwingen an Schiene und Werkstück.}
+	\subsection{Ein Schnitt Schritt für Schritt}
+	\begin{enumerate}
+		\item Checkliste vor dem Sägen durchgehen.
+		\item Werkstück auf dem Arbeitstisch auflegen und mit Zwingen spannen.
+		\item Führungsschiene mit der Splitterschutzkante an der Schnittlinie ausrichten und befestigen.
+		\item Schnitttiefe am Schnitttiefenanschlag einstellen.
+		\item Absaugung einschalten, Säge auf die Schiene setzen, Schutzausrüstung tragen.
+		\item Beide Hände an die Griffe, seitlich der Sägeebene stehen. Einschaltsperre betätigen, Schalter drücken und warten, bis die Drehzahl erreicht ist.
+		\item Sägeaggregat langsam eintauchen und gleichmäßig nach vorn durch das Material schieben.
+		\item Am Schnittende Schalter loslassen und die Säge ruhig halten, bis das Sägeblatt vollständig steht. Erst dann die Säge anheben.
+		\item Netzstecker ziehen, Werkstück lösen, Arbeitsplatz absaugen und aufräumen.
+	\end{enumerate}
+	\todo[inline]{Foto: Säge auf der Führungsschiene mit Splitterschutzkante an der Schnittlinie, Zwingen an Schiene und Werkstück.}
 
-\subsection{Regeln beim Arbeiten}
-Zusätzlich zu den Sicherheitshinweisen oben:
-\begin{itemize}
-\item Vor jedem Einsatz die Eintauchvorrichtung auf einwandfreie Funktion prüfen; bei Fehlfunktion nicht benutzen.
-\item Die Säge nur eingeschaltet gegen das Werkstück führen.
-\item Das Werkstück so befestigen, dass es sich beim Sägen nicht bewegen kann.
-\item Die Säge immer nach vorn schieben, nie rückwärts zu sich heranziehen.
-\item Vorschub anpassen: Zu schnelles oder zu langsames Sägen überhitzt die Zähne, bei Kunststoff schmilzt das Material.
-\item Vor dem Sägen prüfen, dass alle Drehknöpfe fest angezogen sind.
-\item Nicht arbeiten, wenn die Elektronik defekt ist. Anzeichen sind fehlender Sanftanlauf oder eine nicht funktionierende Drehzahlregelung. Es können dann zu hohe Drehzahlen auftreten.
-\end{itemize}
+	\subsection{Einschalten}
+	\begin{itemize}
+		\item Die Maschine vor dem Anschließen und Lösen des Netzkabels immer ausschalten.
+		\item Zum Einschalten die Einschaltsperre betätigen und den Ein-/Ausschalter drücken. Er läuft nur, solange er gedrückt bleibt: Loslassen schaltet aus.
+		\item Die Einschaltsperre entriegelt zugleich die Eintauchvorrichtung: Das Sägeaggregat lässt sich dann nach unten bewegen, und das Sägeblatt taucht aus der Schutzhaube aus.
+	\end{itemize}
+	\todo[inline]{Foto: Einschaltsperre, Ein-/Ausschalter und Netzanschluss an der Säge, beschriftet.}
 
-\section{Einstellungen}
-\subsection{Funktionen der Maschine}
-\begin{itemize}
-\item Sanftanlauf: Die Säge läuft ruckfrei an.
-\item Konstante Drehzahl: Die Drehzahl wird auch unter Last konstant gehalten.
-\item Drehzahlregelung: Die Drehzahl wird am Stellrad eingestellt. Welche Stufe für welches Material geeignet ist, steht in der Betriebsanleitung.
-\item Temperatursicherung: Bei zu hoher Motortemperatur reduziert die Säge Leistung und Drehzahl. Hält die Übertemperatur an, schaltet sie nach kurzer Zeit ab. Erst nach dem Abkühlen kann sie wieder eingeschaltet werden.
-\item Strombegrenzung: Bei starker Überlastung wird die Stromaufnahme begrenzt, die Drehzahl sinkt.
-\item Bremse: Nach dem Ausschalten wird das Sägeblatt elektronisch abgebremst und steht nach wenigen Sekunden. Nie in das auslaufende Blatt greifen.
-\end{itemize}
-\todo[inline]{Foto: Stellrad für die Drehzahl mit der Stufenbeschriftung an der Säge.}
+	\subsection{Regeln beim Sägen}
+	\begin{itemize}
+		\item Vor jedem Einsatz die Eintauchvorrichtung auf einwandfreie Funktion prüfen; bei Fehlfunktion nicht benutzen.
+		\item Die Säge nur eingeschaltet gegen das Werkstück führen.
+		\item Die Schnitttiefe so wählen, dass das Blatt weniger als eine Zahnhöhe unter dem Werkstück herausragt. In den Festool-Arbeitstisch höchstens 1\,mm tief sägen.
+		\item Die Säge immer nach vorn schieben, nie rückwärts zu sich heranziehen.
+		\item Vorschub anpassen: Zu schnelles oder zu langsames Sägen überhitzt die Zähne, bei Kunststoff schmilzt das Material.
+		\item Nie so sägen, dass das Netzkabel getroffen werden kann (Stromschlag).
+		\item Vor dem Sägen prüfen, dass alle Drehknöpfe fest angezogen sind.
+		\item Nicht arbeiten, wenn die Elektronik defekt ist. Anzeichen sind fehlender Sanftanlauf oder eine nicht funktionierende Drehzahlregelung. Es können dann zu hohe Drehzahlen auftreten.
+	\end{itemize}
 
-\subsection{Schnitttiefe einstellen}
-Die Schnitttiefe wird am Schnitttiefenanschlag eingestellt. Das Sägeaggregat lässt sich dann nur bis zu dieser Tiefe nach unten drücken. Mit Führungsschiene ist die maximale Schnitttiefe etwas geringer als ohne (siehe Betriebsanleitung). Regel im FabLab: Das Blatt ragt nur knapp unter dem Werkstück heraus.
-\todo[inline]{Foto: Schnitttiefenanschlag mit Beschriftung.}
+	\subsection{Rückschlag}
+	Ein Rückschlag entsteht, wenn das Sägeblatt klemmt oder verkantet. Die Säge springt dann unkontrolliert aus dem Werkstück in Richtung der Bedienperson. Er ist vermeidbar:
+	\begin{itemize}
+		\item Säge mit beiden Händen halten, seitlich der Sägeebene stehen und die Arme so positionieren, dass sie einen Rückstoß abfangen können.
+		\item Bei klemmendem Blatt oder Arbeitsunterbrechung den Schalter loslassen und die Säge ruhig halten, bis das Blatt vollständig steht. Die Säge nie aus dem Schnitt ziehen oder zurückziehen, solange sich das Blatt dreht.
+		\item Vor dem Wiedereinschalten einer im Werkstück steckenden Säge das Blatt im Schnittspalt zentrieren und prüfen, dass die Zähne nicht verhakt sind.
+		\item Große Platten abstützen, damit sich der Schnitt nicht zusammenzieht und das Blatt klemmt.
+	\end{itemize}
 
-\subsection{Schnittwinkel einstellen}
-Das Sägeaggregat lässt sich zwischen 0\textdegree{} und 45\textdegree{} schwenken. Bei Winkelschnitten Sichtfenster bzw.\ Splitterschutz in die oberste Position schieben.
-\begin{enumerate}
-\item Drehknöpfe der Winkelverstellung lösen.
-\item Sägeaggregat auf den gewünschten Winkel schwenken.
-\item Drehknöpfe wieder fest anziehen.
-\end{enumerate}
-Über 0\textdegree{} bzw.\ 45\textdegree{} hinaus (Hinterschnitt, $-1$\textdegree{} bis 47\textdegree) gibt es Entriegelungen an der Säge. Das Vorgehen dazu steht in der Betriebsanleitung; im Zweifel einen Betreuer fragen.
-\todo[inline]{Foto: Winkelverstellung mit Drehknöpfen und Winkelskala.}
+	\subsection{Nicht erlaubt}
+	Folgendes ist im FabLab \textbf{verboten}:
+	\begin{itemize}
+		\item Freihändiges Sägen ohne Führungsschiene.
+		\item Sägen ohne angeschlossene Absaugung.
+		\item Sägen von ungespannten oder nur mit der Hand gehaltenen Werkstücken.
+		\item Sägen sehr kleiner Werkstücke, die sich nicht sicher spannen lassen.
+		\item Sägen von Metall außer Aluminium (mit Aluminium-Sägeblatt) sowie von Stein und anderen nicht zugelassenen Materialien.
+		\item Sägen von Material mit Nägeln, Schrauben oder anderen Metallteilen im Schnittbereich.
+		\item Verwenden nicht zugelassener, stumpfer oder beschädigter Sägeblätter.
+		\item Entfernen oder Blockieren der Schutzhaube.
+		\item Benutzen der Säge durch nicht eingewiesene Personen.
+	\end{itemize}
 
-\subsection{Sägeblatt wechseln}
-Der Sägeblattwechsel erfolgt nur durch eingewiesene Personen bei gezogenem Netzstecker. Schutzhandschuhe tragen, das Blatt ist scharf und kann heiß sein. Keine stumpfen oder beschädigten Sägeblätter einsetzen.
-\begin{enumerate}
-\item Netzstecker ziehen. Säge auf 0\textdegree{} schwenken und maximale Schnitttiefe einstellen.
-\item Sägeblatt arretieren und die Spannschraube mit dem Innensechskantschlüssel lösen. Die genauen Bedienschritte für Hebel und Einschaltsperre stehen in der Betriebsanleitung.
-\item Altes Blatt entnehmen, neues einsetzen. Die Drehrichtungspfeile auf Blatt und Maschine müssen übereinstimmen.
-\item Äußeren Flansch so aufsetzen, dass die Mitnehmerzapfen in den inneren Flansch greifen, und die Schraube fest anziehen.
-\item Arretierung lösen und Funktion der Schutzhaube prüfen.
-\end{enumerate}
-\todo[inline]{Fotos: Sägeblattwechsel Schritt für Schritt (Arretierung, Spannschraube, Flansch, Drehrichtungspfeil).}
+	\section{Einstellungen}
 
-\section{Übersicht der Säge}
-\todo[inline]{Foto der Säge mit beschrifteten Bedienelementen (Griffe, Ein-/Ausschalter mit Einschaltsperre, Stellrad, Schnitttiefenanschlag, Winkelverstellung, Absauganschluss, Führungsschiene).}
+	\subsection{Funktionen der Maschine}
+	\begin{itemize}
+		\item Sanftanlauf: Die Säge läuft ruckfrei an.
+		\item Konstante Drehzahl: Die Drehzahl wird auch unter Last konstant gehalten.
+		\item Drehzahlregelung: Die Drehzahl wird am Stellrad eingestellt. Welche Stufe für welches Material geeignet ist, steht in der Betriebsanleitung.
+		\item Temperatursicherung: Bei zu hoher Motortemperatur reduziert die Säge Leistung und Drehzahl. Hält die Übertemperatur an, schaltet sie nach kurzer Zeit ab. Erst nach dem Abkühlen kann sie wieder eingeschaltet werden.
+		\item Strombegrenzung: Bei starker Überlastung wird die Stromaufnahme begrenzt, die Drehzahl sinkt.
+		\item Bremse: Nach dem Ausschalten wird das Sägeblatt elektronisch abgebremst und steht nach wenigen Sekunden. Nie in das auslaufende Blatt greifen.
+	\end{itemize}
+	\todo[inline]{Foto: Stellrad für die Drehzahl mit der Stufenbeschriftung an der Säge.}
 
-\section{Quellen und Rechte}
-\label{quellen}
-Die Formulierungen und Bilder dieser Einweisung sind eigenständig erstellt. Sachliche Angaben (technische Daten, Sicherheitsregeln) beruhen auf der Betriebsanleitung des Herstellers und allgemein bekannten Regeln. Maßgeblich ist die Originalbetriebsanleitung von Festool, die der Maschine beiliegt und auf \url{www.festool.com} zu finden ist. Festool hat dieses Dokument weder geprüft noch übernimmt es dafür eine Haftung.
+	\subsection{Schnitttiefe einstellen}
+	Die Schnitttiefe wird am Schnitttiefenanschlag eingestellt. Das Sägeaggregat lässt sich dann nur bis zu dieser Tiefe nach unten drücken. Mit Führungsschiene ist die maximale Schnitttiefe etwas geringer als ohne (siehe Betriebsanleitung).
+	\todo[inline]{Foto: Schnitttiefenanschlag mit Beschriftung.}
+
+	\subsection{Schnittwinkel einstellen}
+	Das Sägeaggregat lässt sich zwischen 0\textdegree{} und 45\textdegree{} schwenken. Bei Winkelschnitten Sichtfenster bzw.\ Splitterschutz in die oberste Position schieben.
+	\begin{enumerate}
+		\item Drehknöpfe der Winkelverstellung lösen.
+		\item Sägeaggregat auf den gewünschten Winkel schwenken.
+		\item Drehknöpfe wieder fest anziehen.
+	\end{enumerate}
+	Über 0\textdegree{} bzw.\ 45\textdegree{} hinaus (Hinterschnitt, $-1$\textdegree{} bis 47\textdegree) gibt es Entriegelungen an der Säge. Das Vorgehen steht in der Betriebsanleitung; im Zweifel einen Betreuer fragen.
+	\todo[inline]{Foto: Winkelverstellung mit Drehknöpfen und Winkelskala.}
+
+	\section{Nach dem Sägen}
+
+	\begin{itemize}
+		\item Säge ausschalten, Blatt abwarten, Netzstecker ziehen.
+		\item Säge, Schiene und Arbeitsplatz absaugen, keine Späne oder Staub liegen lassen.
+		\item Säge, Führungsschiene, Zwingen und Sauger an ihren Platz zurücklegen.
+		\item Schäden, stumpfe Sägeblätter oder Probleme einem Betreuer melden.
+		\item Arbeitsplatz sauber hinterlassen.
+	\end{itemize}
+	\todo[inline]{Lagerort von Säge, Schiene, Zwingen, Blättern und Sauger angeben; Regelung zu Verschnitt und Alu-Spänen.}
+
+	\section{Infos für Betreuer}
+
+	\subsection{Sägeblattwechsel}
+	Der Sägeblattwechsel erfolgt nur durch eingewiesene Personen bei gezogenem Netzstecker. Schutzhandschuhe tragen, das Blatt ist scharf und kann heiß sein. Keine stumpfen oder beschädigten Sägeblätter einsetzen.
+	\begin{enumerate}
+		\item Netzstecker ziehen. Säge auf 0\textdegree{} schwenken und maximale Schnitttiefe einstellen.
+		\item Sägeblatt arretieren und die Spannschraube mit dem Innensechskantschlüssel lösen. Die genauen Bedienschritte für Hebel und Einschaltsperre stehen in der Betriebsanleitung.
+		\item Altes Blatt entnehmen, neues einsetzen. Die Drehrichtungspfeile auf Blatt und Maschine müssen übereinstimmen.
+		\item Äußeren Flansch so aufsetzen, dass die Mitnehmerzapfen in den inneren Flansch greifen, und die Schraube fest anziehen.
+		\item Arretierung lösen und Funktion der Schutzhaube prüfen.
+	\end{enumerate}
+	\todo[inline]{Fotos: Sägeblattwechsel Schritt für Schritt (Arretierung, Spannschraube, Flansch, Drehrichtungspfeil).}
+
+	\subsection{Typische Fehler}
+	\begin{itemize}
+		\item \textbf{Brandspuren am Schnitt oder geschmolzener Kunststoff:} Vorschub erhöhen, Blatt prüfen (stumpf oder ungeeignet).
+		\item \textbf{Ausgerissene Kanten:} Splitterschutz der Schiene prüfen, Blatt tauschen, Schnitttiefe anpassen.
+		\item \textbf{Blatt klemmt:} Werkstück besser abstützen, Schiene prüfen.
+		\item \textbf{Säge läuft nicht rund oder Elektronik meldet Fehler:} Säge nicht weiter benutzen, kennzeichnen und Betreuer informieren.
+	\end{itemize}
+
+	\subsection{Pflege und Prüfung}
+	\begin{itemize}
+		\item Säge und Motorlüftung regelmäßig von Staub reinigen.
+		\item Kabel, Schutzhaube, Schiene und Blatt regelmäßig prüfen.
+		\item Elektrische Prüfung nach DGUV Vorschrift 3 gemäß Prüffrist.
+		\item Wartung nur durch Betreuer im ausgeschalteten Zustand.
+	\end{itemize}
+	\todo[inline]{Prüffrist, zuständige Person (Maschinenverantwortlicher) und Datum der letzten Prüfung eintragen.}
+
+	\section{Übersicht der Säge}
+	\todo[inline]{Foto der Säge mit beschrifteten Bedienelementen (Griffe, Ein-/Ausschalter mit Einschaltsperre, Stellrad, Schnitttiefenanschlag, Winkelverstellung, Absauganschluss, Führungsschiene).}
+
+	\section{Quellen}
+	Die Formulierungen und Bilder dieser Einweisung sind eigenständig erstellt. Sachliche Angaben (technische Daten, Sicherheitsregeln) beruhen auf der Betriebsanleitung des Herstellers und allgemein bekannten Regeln. Maßgeblich ist die Originalbetriebsanleitung von Festool, die der Maschine beiliegt (Links siehe oben). Festool hat dieses Dokument weder geprüft noch übernimmt es dafür eine Haftung.
+
+	\ccLicense{festool-kreissaege-einweisung}{Einweisung Festool-Kreissäge}
 
 \end{document}
