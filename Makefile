@@ -1,2 +1,2 @@
-TARGET=einweisung_Kreissaege einweisungsliste_Kreissaege
+TARGET=Betriebsanweisung_Kreissaege einweisung_Kreissaege einweisungsliste_Kreissaege
 include fablab-document/Makefile.include

@@ -1,0 +1,69 @@
+% =====================================================================
+%  Betriebsanweisung Tauchsäge Festool TS 55 REBQ mit Führungsschiene
+%  Eigenes PDF: Betriebsanweisung_Kreissaege.tex, Seite in der Einweisung
+%  über \BAseite. Layout: fablab-document/fablab-ba.sty
+%
+%  Lizenz-Hinweis: Text vollständig selbst formuliert, KEINE Passagen und
+%  KEINE Abbildungen aus der Festool-Betriebsanleitung übernehmen! Sicherheits-
+%  regeln als solche (Fakten) sind frei, der Wortlaut und die Bilder von
+%  Festool sind urheberrechtlich geschützt. Nur ISO-7010-Symbole verwenden.
+% =====================================================================
+\BAsetup{
+  typ=maschine,
+  titel={Tauchsäge Festool TS 55 REBQ mit Führungsschiene},
+  kurztitel={Tauchsäge},
+  taetigkeit={Sägen mit Führungsschiene, Sägeblattwechsel, Reinigen},
+  nummer=BA-HK-01,
+  stand=29.09.2026,                   % Datum der Freigabe
+  verantwortlich={Name der verantwortlichen Person},
+  signalwort=WARNUNG,
+  schrift=\footnotesize,
+}
+
+\BAkopf
+
+\BAblock{ANWENDUNGSBEREICH}{M002}{%
+  \begin{itemize}
+    \item Sägen von Plattenmaterial, Holz, Kunststoff und (mit Aluminium-Sägeblatt) Aluminium.
+    \item Nur mit Führungsschiene, freihändiges Sägen ist nicht erlaubt. Nicht während der normalen Öffnungszeiten.
+    \item Benutzung nur nach unterschriebener Einweisung; Betriebsanleitung des Herstellers beachten.
+  \end{itemize}}
+
+\BAblock{GEFAHREN FÜR MENSCH UND UMWELT}{W022,W024,W012}{%
+  \begin{itemize}
+    \item Schnittverletzungen, vor allem unter dem Werkstück (dort schützt die Haube nicht).
+    \item \textbf{Rückschlag:} Verkantet das Sägeblatt, kann die Säge unkontrolliert zur Bedienperson springen.
+    \item Wegfliegende Teile und Späne; Stromschlag bei angesägtem Netzkabel; Lärm.
+    \item Gesundheitsschäden durch Staub; Hartholzstaub kann Krebs erzeugen.
+  \end{itemize}}
+
+\BAblock{SCHUTZMASSNAHMEN UND VERHALTENSREGELN}{M003,M004,M009,M017}{%
+  \begin{itemize}
+    \item Vor jeder Benutzung Säge, Kabel, Blatt und Schutzhaube prüfen; defekte Säge nicht benutzen.
+    \item Gehörschutz tragen; Schutzbrille bei Metall; Staubmaske bei viel Staub (Hartholz). Anliegende Kleidung, Haare zusammenbinden.
+    \item Werkstück und Führungsschiene fest spannen. Immer Absaugung (Festool-Sauger, Staubklasse M) anschließen; bei Hartholzstaub Arbeit abbrechen bzw.\ ins Freie verlegen.
+    \item Säge mit \textbf{beiden Händen} führen, seitlich der Sägeebene stehen. Nie unter das Werkstück greifen.
+    \item Schnitttiefe anpassen: Blatt ragt nur wenig unter dem Werkstück heraus, im Arbeitstisch höchstens 1\,mm tief sägen.
+    \item Säge nur eingeschaltet ins Material führen, nur vorwärts schieben. Bei klemmendem Blatt Schalter loslassen und Säge ruhig halten, bis das Blatt steht.
+    \item Kabel aus dem Schnittbereich fernhalten; bei Kabelschaden sofort Stecker ziehen.
+    \item Aluminium: nur Aluminium-Sägeblatt, Spanflugschutz schließen. Nur passende Original-Sägeblätter verwenden.
+  \end{itemize}}
+
+\BAblock{VERHALTEN BEI STÖRUNGEN UND IM GEFAHRENFALL}{W001,M006}{%
+  \begin{itemize}
+    \item Säge ausschalten, Stecker ziehen, Betreuer informieren; Schaden und Hergang per Mail an \texttt{fablab-aktive@fablab.fau.de} melden.
+    \item Entstehungsbrand: Säge vom Netz trennen, löschen. \textbf{Feuerwehr: 112}
+  \end{itemize}}
+
+\BAblock{VERHALTEN BEI UNFÄLLEN – ERSTE HILFE}{E003}{%
+  \begin{itemize}
+    \item Säge ausschalten, Stecker ziehen. Betreuer/Ersthelfer verständigen, Wunden versorgen.
+    \item Jeden Unfall melden und im Verbandbuch eintragen.
+  \end{itemize}\vspace{1.5mm}
+  \textbf{Notruf: 112}\qquad FabLab: 09131\,/\,85\,28013}
+
+\BAletzterblock{INSTANDHALTUNG, ENTSORGUNG}{M021}{%
+  \begin{itemize}
+    \item Sägeblattwechsel und Wartung nur durch eingewiesene Personen, mit gezogenem Stecker und Schutzhandschuhen.
+    \item Säge und Motorlüftung regelmäßig von Staub reinigen. Elektrische Prüfung nach DGUV Vorschrift 3 gemäß Prüffrist.
+  \end{itemize}}
