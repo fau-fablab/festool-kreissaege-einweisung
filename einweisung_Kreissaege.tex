@@ -18,6 +18,9 @@
 \usepackage{caption}
 \usepackage{qrcode}
 \usepackage{fablab-document/fablab-ba} % Betriebsanweisung
+\usetikzlibrary{calc}
+% Nummer eines Bedienelements wie in den Fotos, z.B. \teil{3}
+\newcommand{\teil}[1]{\tikz[baseline=(n.base)]\node[circle, draw=black, fill=white, line width=0.8pt, minimum size=3.8mm, inner sep=0pt, font=\tiny\bfseries](n){#1};}
 
 \renewcommand{\texteuro}{\euro}
 
@@ -47,7 +50,7 @@
 		\item Werkstück und Führungsschiene sind fest gespannt. Die Säge wird immer mit \textbf{beiden Händen} geführt.
 		\item Niemals unter das Werkstück greifen und die Hände vom Sägeblatt fernhalten.
 		\item Immer die Absaugung anschließen.
-		\item Gehörschutz tragen, bei Metall zusätzlich Schutzbrille, bei viel Staub (Hartholz) Staubmaske.
+		\item Gehörschutz tragen, bei Metall zusätzlich Schutzbrille, bei viel Staub (Hartholz) Staubmaske. Beim Sägen keine Handschuhe.
 		\item Bei klemmendem Blatt: Schalter loslassen, Säge ruhig halten, bis das Blatt steht. Nie aus dem Schnitt ziehen.
 		\item Die Säge nur nach vorn schieben, nie zu dir heranziehen.
 		\item Sägeblatt nur bei gezogenem Netzstecker wechseln.
@@ -94,6 +97,36 @@
 
 	\textbf{Bestimmungsgemäße Verwendung:} Die Tauchsäge sägt Holz, holzähnliche Werkstoffe, Kunststoffe sowie gips- und zementgebundene Faserstoffe. Mit Aluminium-Sägeblatt auch Aluminium. Diese Einweisung gilt nur für die Verwendung als Tauchsäge \textbf{mit Führungsschiene} zum Zersägen von Plattenmaterial, Holzlatten und Ähnlichem. Nur Sägeblätter verwenden, die laut Betriebsanleitung für die Maschine zugelassen und für das Material geeignet sind.
 
+	\subsection{Bedienelemente}
+	\label{sec:bedienelemente}
+
+	Die Fotos zeigen das Vorgängermodell \textbf{TS 55 EBQ}. An unserer TS 55 REBQ sind die Bedienelemente ähnlich angeordnet, einzelne Teile sehen aber anders aus.
+
+	\begin{center}
+		\input{zeichnungen/foto-bedienelemente}\\[1mm]
+		{\footnotesize Fotos: Oxensepp, Wikimedia Commons (\href{https://commons.wikimedia.org/wiki/File:0x-tauchkreis-2.jpg}{Grundstellung}, \href{https://commons.wikimedia.org/wiki/File:0x-tauchkreis-3.jpg}{eingetaucht}), Lizenz \href{https://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}, mit Nummern ergänzt.}
+	\end{center}
+
+	\begin{center}
+		\small
+		\renewcommand{\arraystretch}{1.25}
+		\renewcommand{\tabularxcolumn}[1]{m{#1}}
+		\begin{tabularx}{\textwidth}{|c|m{40mm}|X|}
+			\hline
+			& \textbf{Bedienelement} & \textbf{Bedienung} \\ \hline
+			\teil{1} & Handgriff & Rechte Hand. Die Säge immer mit beiden Händen führen. \\ \hline
+			\teil{2} & Einschaltsperre (grün) & Vor dem Einschalten betätigen. Sie entriegelt zugleich das Eintauchen. \\ \hline
+			\teil{3} & Ein-/Ausschalter (grün) & Drücken: Die Säge läuft, solange er gedrückt bleibt. Loslassen: Sie stoppt und bremst das Blatt ab. \\ \hline
+			\teil{4} & Vorderer Griff & Linke Hand. Hände weg vom Sägeblatt und nie unter das Werkstück greifen. \\ \hline
+			\teil{5} & Absauganschluss & Saugschlauch aufstecken. Nie ohne Absaugung sägen. \\ \hline
+			\teil{6} & Drehknopf der Winkelverstellung (vorn, ein zweiter hinten) & Lösen, Säge auf den gewünschten Winkel schwenken, wieder fest anziehen. Vor jedem Schnitt prüfen, dass beide fest sind. \\ \hline
+			\teil{7} & Schutzhaube & Deckt das Sägeblatt ab. Nie entfernen oder blockieren. \\ \hline
+			\teil{8} & Grundplatte & Läuft mit ihrer Nut auf der Führungsschiene. \\ \hline
+			\teil{9} & Sägeblatt & Kommt erst beim Eintauchen aus der Schutzhaube heraus. Nach dem Loslassen des Schalters läuft es kurz nach. \\ \hline
+			\teil{10} & Spaltkeil & Hält den Schnitt hinter dem Blatt offen und verringert so die Gefahr eines Rückschlags. \\ \hline
+		\end{tabularx}
+	\end{center}
+
 	\section{Vorbereitung}
 
 	\subsection{Checkliste vor dem Sägen}
@@ -114,7 +147,7 @@
 		\item Gehörschutz (befindet sich bei der Fräse)
 		\item Schutzbrille bei Metallbearbeitung (neben der Fräse über der Werkbank)
 		\item Staubmaske bei stauberzeugenden Arbeiten (insbesondere Hartholz)
-		\item Schutzhandschuhe beim Bearbeiten rauer Materialien und beim Werkzeugwechsel
+		\item Beim Sägen \textbf{keine Handschuhe} tragen: Das rotierende Sägeblatt kann sie erfassen und die Hand mitziehen. Schutzhandschuhe nur, wenn die Säge steht: beim Sägeblattwechsel mit gezogenem Netzstecker und beim Tragen von rauem Material.
 		\item Eng anliegende Kleidung ohne Fransen oder abstehende Elemente wie Kordeln (kann in rotierende Maschinen eingezogen werden)
 		\item Lange Haare zusammenbinden, keine offenen Haare
 	\end{itemize}
@@ -126,11 +159,9 @@
 		\item Bei Hartholz darf im FabLab kein Hartholzstaub entstehen. Falls doch, die Arbeit im FabLab nicht fortsetzen, sondern ins Freie verlegen.
 		\item Nur Sägeblätter und Spannflansche von Festool verwenden.
 	\end{itemize}
-	\todo[inline]{Tabelle Sägeblatt je Material (Blatttyp, Zähnezahl, Lagerort) ergänzen.}
 
 	\subsection{Absaugung}
 	Immer den Staubsauger anschließen. Nur den für Staubklasse M zugelassenen Festool-Sauger verwenden. Beim Sägen von Aluminium zusätzlich regelmäßig Staubablagerungen im Motorgehäuse entfernen, Sichtfenster bzw.\ Spanflugschutz schließen und Schutzbrille tragen.
-	\todo[inline]{Foto: Säge mit angeschlossenem Sauger, Schlauch am Absauganschluss.}
 
 	\section{Sägen}
 
@@ -146,15 +177,13 @@
 		\item Am Schnittende Schalter loslassen und die Säge ruhig halten, bis das Sägeblatt vollständig steht. Erst dann die Säge anheben.
 		\item Netzstecker ziehen, Werkstück lösen, Arbeitsplatz absaugen und aufräumen.
 	\end{enumerate}
-	\todo[inline]{Foto: Säge auf der Führungsschiene mit Splitterschutzkante an der Schnittlinie, Zwingen an Schiene und Werkstück.}
 
 	\subsection{Einschalten}
 	\begin{itemize}
 		\item Die Maschine vor dem Anschließen und Lösen des Netzkabels immer ausschalten.
-		\item Zum Einschalten die Einschaltsperre betätigen und den Ein-/Ausschalter drücken. Er läuft nur, solange er gedrückt bleibt: Loslassen schaltet aus.
+		\item Zum Einschalten die Einschaltsperre~\teil{2} betätigen und den Ein-/Ausschalter~\teil{3} drücken. Er läuft nur, solange er gedrückt bleibt: Loslassen schaltet aus.
 		\item Die Einschaltsperre entriegelt zugleich die Eintauchvorrichtung: Das Sägeaggregat lässt sich dann nach unten bewegen, und das Sägeblatt taucht aus der Schutzhaube aus.
 	\end{itemize}
-	\todo[inline]{Foto: Einschaltsperre, Ein-/Ausschalter und Netzanschluss an der Säge, beschriftet.}
 
 	\subsection{Regeln beim Sägen}
 	\begin{itemize}
@@ -182,6 +211,7 @@
 	\begin{itemize}
 		\item Freihändiges Sägen ohne Führungsschiene.
 		\item Sägen ohne angeschlossene Absaugung.
+		\item Sägen mit Handschuhen.
 		\item Sägen von ungespannten oder nur mit der Hand gehaltenen Werkstücken.
 		\item Sägen sehr kleiner Werkstücke, die sich nicht sicher spannen lassen.
 		\item Sägen von Metall außer Aluminium (mit Aluminium-Sägeblatt) sowie von Stein und anderen nicht zugelassenen Materialien.
@@ -202,11 +232,9 @@
 		\item Strombegrenzung: Bei starker Überlastung wird die Stromaufnahme begrenzt, die Drehzahl sinkt.
 		\item Bremse: Nach dem Ausschalten wird das Sägeblatt elektronisch abgebremst und steht nach wenigen Sekunden. Nie in das auslaufende Blatt greifen.
 	\end{itemize}
-	\todo[inline]{Foto: Stellrad für die Drehzahl mit der Stufenbeschriftung an der Säge.}
 
 	\subsection{Schnitttiefe einstellen}
 	Die Schnitttiefe wird am Schnitttiefenanschlag eingestellt. Das Sägeaggregat lässt sich dann nur bis zu dieser Tiefe nach unten drücken. Mit Führungsschiene ist die maximale Schnitttiefe etwas geringer als ohne (siehe Betriebsanleitung).
-	\todo[inline]{Foto: Schnitttiefenanschlag mit Beschriftung.}
 
 	\subsection{Schnittwinkel einstellen}
 	Das Sägeaggregat lässt sich zwischen 0\textdegree{} und 45\textdegree{} schwenken. Bei Winkelschnitten Sichtfenster bzw.\ Splitterschutz in die oberste Position schieben.
@@ -216,7 +244,6 @@
 		\item Drehknöpfe wieder fest anziehen.
 	\end{enumerate}
 	Über 0\textdegree{} bzw.\ 45\textdegree{} hinaus (Hinterschnitt, $-1$\textdegree{} bis 47\textdegree) gibt es Entriegelungen an der Säge. Das Vorgehen steht in der Betriebsanleitung; im Zweifel einen Betreuer fragen.
-	\todo[inline]{Foto: Winkelverstellung mit Drehknöpfen und Winkelskala.}
 
 	\section{Nach dem Sägen}
 
@@ -227,12 +254,11 @@
 		\item Schäden, stumpfe Sägeblätter oder Probleme einem Betreuer melden.
 		\item Arbeitsplatz sauber hinterlassen.
 	\end{itemize}
-	\todo[inline]{Lagerort von Säge, Schiene, Zwingen, Blättern und Sauger angeben; Regelung zu Verschnitt und Alu-Spänen.}
 
 	\section{Infos für Betreuer}
 
 	\subsection{Sägeblattwechsel}
-	Der Sägeblattwechsel erfolgt nur durch eingewiesene Personen bei gezogenem Netzstecker. Schutzhandschuhe tragen, das Blatt ist scharf und kann heiß sein. Keine stumpfen oder beschädigten Sägeblätter einsetzen.
+	Der Sägeblattwechsel erfolgt nur durch eingewiesene Personen bei gezogenem Netzstecker. Schutzhandschuhe tragen, das Blatt ist scharf und kann heiß sein. Vor dem Einschalten die Handschuhe wieder ausziehen. Keine stumpfen oder beschädigten Sägeblätter einsetzen.
 	\begin{enumerate}
 		\item Netzstecker ziehen. Säge auf 0\textdegree{} schwenken und maximale Schnitttiefe einstellen.
 		\item Sägeblatt arretieren und die Spannschraube mit dem Innensechskantschlüssel lösen. Die genauen Bedienschritte für Hebel und Einschaltsperre stehen in der Betriebsanleitung.
@@ -240,7 +266,6 @@
 		\item Äußeren Flansch so aufsetzen, dass die Mitnehmerzapfen in den inneren Flansch greifen, und die Schraube fest anziehen.
 		\item Arretierung lösen und Funktion der Schutzhaube prüfen.
 	\end{enumerate}
-	\todo[inline]{Fotos: Sägeblattwechsel Schritt für Schritt (Arretierung, Spannschraube, Flansch, Drehrichtungspfeil).}
 
 	\subsection{Typische Fehler}
 	\begin{itemize}
@@ -257,13 +282,9 @@
 		\item Elektrische Prüfung nach DGUV Vorschrift 3 gemäß Prüffrist.
 		\item Wartung nur durch Betreuer im ausgeschalteten Zustand.
 	\end{itemize}
-	\todo[inline]{Prüffrist, zuständige Person (Maschinenverantwortlicher) und Datum der letzten Prüfung eintragen.}
-
-	\section{Übersicht der Säge}
-	\todo[inline]{Foto der Säge mit beschrifteten Bedienelementen (Griffe, Ein-/Ausschalter mit Einschaltsperre, Stellrad, Schnitttiefenanschlag, Winkelverstellung, Absauganschluss, Führungsschiene).}
 
 	\section{Quellen}
-	Die Formulierungen und Bilder dieser Einweisung sind eigenständig erstellt. Sachliche Angaben (technische Daten, Sicherheitsregeln) beruhen auf der Betriebsanleitung des Herstellers und allgemein bekannten Regeln. Maßgeblich ist die Originalbetriebsanleitung von Festool, die der Maschine beiliegt (Links siehe oben). Festool hat dieses Dokument weder geprüft noch übernimmt es dafür eine Haftung.
+	Die Formulierungen dieser Einweisung sind eigenständig erstellt. Die Fotos in Abschnitt~\ref{sec:bedienelemente} stammen von Oxensepp und stehen auf Wikimedia Commons unter der Lizenz \href{https://creativecommons.org/licenses/by-sa/3.0/}{CC BY-SA 3.0}; sie zeigen das Vorgängermodell TS 55 EBQ und wurden mit Nummern ergänzt. Sachliche Angaben (technische Daten, Sicherheitsregeln) beruhen auf der Betriebsanleitung des Herstellers und allgemein bekannten Regeln. Maßgeblich ist die Originalbetriebsanleitung von Festool, die der Maschine beiliegt (Links siehe oben). Festool hat dieses Dokument weder geprüft noch übernimmt es dafür eine Haftung.
 
 	\ccLicense{festool-kreissaege-einweisung}{Einweisung Festool-Kreissäge}
 

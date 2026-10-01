@@ -6,7 +6,7 @@ Einweisung des [FAU FabLab](https://fablab.fau.de) in die Tauchsäge Festool TS 
 Inhalt
 ------
 
-- Technische Daten, allgemeine Sicherheitshinweise (Sägeblatt, Rückschlag, Holzstaub)
+- Technische Daten, Bedienelemente (Fotos mit Bedienhinweisen), allgemeine Sicherheitshinweise (Sägeblatt, Rückschlag, Holzstaub)
 - Schutzausrüstung, bestimmungsgemäße Verwendung, Aluminiumbearbeitung
 - Einstellungen: Schnitttiefe, Schnittwinkel, Sägeblattwechsel
 
@@ -44,9 +44,12 @@ Technische Details zum Buildserver: [fau-fablab/buildserver](https://github.com/
 Lizenz
 ------
 
+[![Lizenz: CC BY-SA 3.0](https://licensebuttons.net/l/by-sa/3.0/de/88x31.png)</br>CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)
+
 Die Einweisung und die Betriebsanweisung (`betriebsanweisung/ba_handkreissaege.tex`, BA-HK-01) sind selbst
 formuliert und enthalten keine Texte oder Abbildungen aus der Festool-Betriebsanleitung, nur ISO-7010-Symbole.
+Die Fotos in `bilder/` stammen von Oxensepp (Wikimedia Commons) und stehen unter CC BY-SA 3.0, siehe
+[bilder/QUELLEN.md](bilder/QUELLEN.md).
 Für Details wird auf die Originalanleitung von Festool verwiesen. **Beim Bearbeiten nichts aus der
-Festool-Anleitung übernehmen, auch nicht sinngemäß Satz für Satz.** Bilder bitte selbst fotografieren.
-
-Offen: Die Platzhalter `\todo` in der Einweisung stehen für eigene Fotos der Säge.
+Festool-Anleitung übernehmen, auch nicht sinngemäß Satz für Satz.** Bilder bitte selbst fotografieren
+oder nur mit freier, kompatibler Lizenz verwenden.
