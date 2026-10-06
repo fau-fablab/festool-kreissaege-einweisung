@@ -22,6 +22,10 @@
 % Nummer eines Bedienelements wie in den Fotos, z.B. \teil{3}
 \newcommand{\teil}[1]{\tikz[baseline=(n.base)]\node[circle, draw=black, fill=white, line width=0.8pt, minimum size=3.8mm, inner sep=0pt, font=\tiny\bfseries](n){#1};}
 
+\definecolor{bediengruen}{RGB}{130,200,60} % Grün der Bedienelemente (wie Oberfräse, Dübelfräse)
+% Farbe mit Farbfeld, Wort in etwas dunklerer Farbe (lesbar), z.B. \farbe{bediengruen}{grün}
+\newcommand{\farbe}[2]{{\colorlet{farbefeld}{#1}\tikz[baseline=-0.6ex]\draw[fill=farbefeld, draw=black!60] (0,-1.1mm) rectangle (2.2mm,1.1mm);~\textcolor{farbefeld!70!black}{#2}}}
+
 \renewcommand{\texteuro}{\euro}
 
 \date{\today}
@@ -115,8 +119,8 @@
 			\hline
 			& \textbf{Bedienelement} & \textbf{Bedienung} \\ \hline
 			\teil{1} & Handgriff & Rechte Hand. Die Säge immer mit beiden Händen führen. \\ \hline
-			\teil{2} & Einschaltsperre (grün) & Vor dem Einschalten betätigen. Sie entriegelt zugleich das Eintauchen. \\ \hline
-			\teil{3} & Ein-/Ausschalter (grün) & Drücken: Die Säge läuft, solange er gedrückt bleibt. Loslassen: Sie stoppt und bremst das Blatt ab. \\ \hline
+			\teil{2} & Einschaltsperre (\farbe{bediengruen}{grün}) & Vor dem Einschalten betätigen. Sie entriegelt zugleich das Eintauchen. \\ \hline
+			\teil{3} & Ein-/Ausschalter (\farbe{bediengruen}{grün}) & Drücken: Die Säge läuft, solange er gedrückt bleibt. Loslassen: Sie stoppt und bremst das Blatt ab. \\ \hline
 			\teil{4} & Vorderer Griff & Linke Hand. Hände weg vom Sägeblatt und nie unter das Werkstück greifen. \\ \hline
 			\teil{5} & Absauganschluss & Saugschlauch aufstecken. Nie ohne Absaugung sägen. \\ \hline
 			\teil{6} & Drehknopf der Winkelverstellung (vorn, ein zweiter hinten) & Lösen, Säge auf den gewünschten Winkel schwenken, wieder fest anziehen. Vor jedem Schnitt prüfen, dass beide fest sind. \\ \hline
